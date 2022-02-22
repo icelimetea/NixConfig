@@ -174,6 +174,7 @@ in rec {
       pv
       file
       cmark
+      bc
     ];
 
     sessionVariables = {
