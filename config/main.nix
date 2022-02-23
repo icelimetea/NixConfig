@@ -166,6 +166,7 @@ in rec {
       ldns
 
       # Desktop apps & utilities
+      thunderbird
       qemu_kvm
       wireshark
       gnome.gnome-tweaks
