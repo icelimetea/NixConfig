@@ -70,7 +70,7 @@ in rec {
 
   services = {
     fwupd.enable = true;
-
+    
     pipewire = {
       enable = true;
 
@@ -166,6 +166,7 @@ in rec {
       ldns
 
       # Desktop apps & utilities
+      tor
       thunderbird
       qemu_kvm
       wireshark
