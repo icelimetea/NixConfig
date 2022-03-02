@@ -72,6 +72,8 @@ in rec {
     fwupd.enable = true;
 
     tor = {
+      # enable = true;
+
       client.enable = true;
       
       enableGeoIP = true;
