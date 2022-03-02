@@ -70,6 +70,16 @@ in rec {
 
   services = {
     fwupd.enable = true;
+
+    tor = {
+      client.enable = true;
+      
+      enableGeoIP = true;
+
+      settings = {
+        ExitNodes = "{ru}";
+      };
+    };
     
     pipewire = {
       enable = true;
