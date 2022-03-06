@@ -100,13 +100,9 @@ in rec {
       layout = "gb,ru";
       xkbOptions = "grp:caps_toggle";
       
-      displayManager.gdm = {
-        enable = true;
+      displayManager.sddm.enable = true;
 
-        wayland = true;
-      };
-
-      desktopManager.gnome.enable = true;
+      desktopManager.plasma5.enable = true;
     };
     
     printing.enable = true;
@@ -187,7 +183,6 @@ in rec {
       thunderbird
       qemu_kvm
       wireshark
-      gnome.gnome-tweaks
       easyeffects
       youtube-dl
       pv
