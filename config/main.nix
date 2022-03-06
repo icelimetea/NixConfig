@@ -191,10 +191,6 @@ in rec {
       bc
     ];
 
-    sessionVariables = {
-      QT_QPA_PLATFORM = "wayland";
-    };
-
     etc = {
       "/sway/config.d/sway.conf".text = ''
         set $term alacritty
