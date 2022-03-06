@@ -3,6 +3,10 @@
 let
   isIntel = true;
 in rec {
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
+
   boot = {
     initrd.luks.devices.osroot = { device = "/dev/disk/by-uuid/6a952187-6b91-4496-92d1-aad3b941e9b7"; };
 
@@ -176,6 +180,7 @@ in rec {
       pciutils
       inetutils
       ldns
+      ppp
 
       # Desktop apps & utilities
       tor
