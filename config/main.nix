@@ -86,7 +86,7 @@ in rec {
     fwupd.enable = true;
 
     tor = {
-      enable = true;
+      # enable = true;
 
       client.enable = true;
       
