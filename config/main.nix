@@ -100,6 +100,8 @@ in rec {
     pipewire = {
       enable = true;
 
+      systemWide = true;
+
       alsa.enable = true;
       pulse.enable = true;
 
@@ -144,7 +146,7 @@ in rec {
   users.users = {
     lemontea = {
       isNormalUser = true;
-      extraGroups = [ "wheel" ];
+      extraGroups = [ "wheel" "pipewire" ];
     };
   };
 
