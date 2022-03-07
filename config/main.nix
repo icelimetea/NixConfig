@@ -199,6 +199,7 @@ in rec {
       file
       cmark
       bc
+      unzip
     ];
 
     etc = {
