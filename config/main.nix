@@ -100,8 +100,6 @@ in rec {
     pipewire = {
       enable = true;
 
-      systemWide = true;
-
       alsa.enable = true;
       pulse.enable = true;
 
