@@ -196,6 +196,7 @@ in rec {
       thunderbird
       wireshark
       easyeffects
+      gnome.gnome-tweaks
       youtube-dl
       pv
       file
