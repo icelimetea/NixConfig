@@ -144,7 +144,7 @@ in rec {
   users.users = {
     lemontea = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "pipewire" ];
+      extraGroups = [ "wheel" ];
     };
   };
 
