@@ -100,8 +100,6 @@ in rec {
     pipewire = {
       enable = true;
 
-      systemWide = true;
-
       alsa.enable = true;
       pulse.enable = true;
 
@@ -114,9 +112,9 @@ in rec {
       layout = "gb,ru";
       xkbOptions = "grp:caps_toggle";
       
-      displayManager.sddm.enable = true;
+      displayManager.gdm.enable = true;
 
-      desktopManager.plasma5.enable = true;
+      desktopManager.gnome.enable = true;
     };
     
     printing.enable = true;
