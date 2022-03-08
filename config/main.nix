@@ -88,6 +88,8 @@ in rec {
     i2pd = {
       enable = true;
 
+      upnp.enable = true;
+
       proto = {
         http.enable = true;
 	
