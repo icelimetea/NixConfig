@@ -85,6 +85,8 @@ in rec {
   services = {
     fwupd.enable = true;
 
+    i2p.enable = true;
+
     tor = {
       # enable = true;
 
