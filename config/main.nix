@@ -85,7 +85,15 @@ in rec {
   services = {
     fwupd.enable = true;
 
-    i2pd.enable = true;
+    i2pd = {
+      enable = true;
+
+      proto = {
+        http.enable = true;
+	
+	httpProxy.enable = true;
+      };
+    };
 
     tor = {
       # enable = true;
