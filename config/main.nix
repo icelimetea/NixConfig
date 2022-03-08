@@ -86,7 +86,7 @@ in rec {
     fwupd.enable = true;
 
     i2pd = {
-      enable = true;
+      # enable = true;
 
       upnp.enable = true;
 
