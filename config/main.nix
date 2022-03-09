@@ -98,7 +98,7 @@ in rec {
     };
 
     tor = {
-      # enable = true;
+      enable = true;
 
       client.enable = true;
       
