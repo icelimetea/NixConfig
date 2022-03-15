@@ -72,16 +72,6 @@ in rec {
   
   sound.enable = true;
 
-  virtualisation.libvirtd = {
-    enable = true;
-
-    qemu = {
-      package = pkgs.qemu_kvm;
-
-      runAsRoot = false;
-    };
-  };
-
   services = {
     fwupd.enable = true;
 
@@ -194,7 +184,6 @@ in rec {
       (if isIntel then microcodeIntel else microcodeAmd)
 
       # System administration
-      virt-manager
       smartmontools
       dmidecode
       usbutils
