@@ -193,6 +193,7 @@ in rec {
       ppp
 
       # Desktop apps & utilities
+      libreoffice-fresh
       tor
       thunderbird
       wireshark
