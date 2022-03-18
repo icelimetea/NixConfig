@@ -166,8 +166,7 @@ in rec {
       maven
 
       # Browsers
-      firefox-wayland
-      chromium
+      firefox-bin
 
       # Messaging apps
       tdesktop
