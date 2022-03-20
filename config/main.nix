@@ -1,3 +1,4 @@
+
 { config, pkgs, nixpkgs, ... }:
 
 let
@@ -88,7 +89,7 @@ in rec {
     };
 
     tor = {
-      enable = true;
+      # enable = true;
 
       client.enable = true;
       
@@ -166,7 +167,7 @@ in rec {
       maven
 
       # Browsers
-      firefox-bin
+      firefox
 
       # Messaging apps
       tdesktop
@@ -189,18 +190,15 @@ in rec {
       pciutils
       inetutils
       ldns
-      ppp
 
       # Desktop apps & utilities
       libreoffice-fresh
-      tor
       thunderbird
       wireshark
       easyeffects
       youtube-dl
       pv
       file
-      cmark
       bc
       unzip
     ];
