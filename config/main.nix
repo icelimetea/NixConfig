@@ -167,7 +167,7 @@ in rec {
       maven
 
       # Browsers
-      firefox-bin
+      firefox
 
       # Messaging apps
       tdesktop
