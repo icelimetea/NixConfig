@@ -43,6 +43,8 @@ in rec {
 
       driSupport = true;
       driSupport32Bit = true;
+
+      extraPackages = (if isIntel then [ pkgs.intel-media-driver ] else [ ]);
     };
 
     cpu.intel.updateMicrocode = isIntel;
@@ -191,6 +193,7 @@ in rec {
       pciutils
       inetutils
       ldns
+      libva-utils
 
       # Desktop apps & utilities
       libreoffice-fresh
