@@ -172,7 +172,8 @@ in rec {
       # Messaging apps
       tdesktop
 
-      # Media editors
+      # Media
+      obs-studio
       gimp
       imagemagick
       ffmpeg
