@@ -194,6 +194,9 @@ in rec {
       inetutils
       ldns
       libva-utils
+      openssh
+      openssl
+      gnupg
 
       # Desktop apps & utilities
       libreoffice-fresh
