@@ -61,7 +61,13 @@ in rec {
       wlp3s0.useDHCP = true;
     };
 
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+
+      enableStrongSwan = true;
+
+      packages = [ pkgs.networkmanager-openvpn ];
+    }
   };
 
   time.timeZone = "Europe/London";
@@ -197,6 +203,8 @@ in rec {
       openssh
       openssl
       gnupg
+      strongswan
+      openvpn
 
       # Desktop apps & utilities
       libreoffice-fresh
