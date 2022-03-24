@@ -163,7 +163,7 @@ in rec {
     systemPackages = with pkgs; [
       # Programming languages
       python3Full
-      clang_13
+      gcc_latest
       nasm
       rustup
 
