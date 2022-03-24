@@ -67,7 +67,7 @@ in rec {
       enableStrongSwan = true;
 
       packages = [ pkgs.networkmanager-openvpn ];
-    }
+    };
   };
 
   time.timeZone = "Europe/London";
