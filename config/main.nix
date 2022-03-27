@@ -78,8 +78,6 @@ in rec {
     font = "Lat2-Terminus16";
     keyMap = "uk";
   };
-  
-  sound.enable = true;
 
   services = {
     fwupd.enable = true;
@@ -149,6 +147,7 @@ in rec {
   };
 
   security = {
+    rtkit.enable = true;
     sudo.enable = true;
   };
 
