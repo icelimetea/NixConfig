@@ -205,6 +205,7 @@ in rec {
       gnupg
       strongswan
       openvpn
+      aircrack-ng
 
       # Desktop apps & utilities
       libreoffice-fresh
