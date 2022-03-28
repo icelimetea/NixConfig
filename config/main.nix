@@ -212,6 +212,7 @@ in rec {
       aircrack-ng
 
       # Desktop apps & utilities
+      gnome.gnome-tweaks
       libreoffice-fresh
       thunderbird
       wireshark
