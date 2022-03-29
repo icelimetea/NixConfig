@@ -207,6 +207,7 @@ in rec {
       strongswan
       openvpn
       aircrack-ng
+      wireguard-tools
 
       # Desktop apps & utilities
       gnome.gnome-tweaks
