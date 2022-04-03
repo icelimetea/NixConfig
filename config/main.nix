@@ -11,6 +11,10 @@ in rec {
   boot = {
     initrd.luks.devices.osroot = { device = "/dev/disk/by-uuid/6a952187-6b91-4496-92d1-aad3b941e9b7"; };
 
+    extraModprobeConfig = ''
+      options ath9k nohwcrypt=1
+    '';
+
     kernelPackages = pkgs.linuxKernel.packageAliases.linux_latest;
 
     loader = {
