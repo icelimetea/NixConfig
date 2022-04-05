@@ -210,7 +210,6 @@ in rec {
       gnupg
       strongswan
       openvpn
-      aircrack-ng
       wireguard-tools
 
       # Desktop apps & utilities
@@ -224,6 +223,7 @@ in rec {
       file
       bc
       unzip
+      nghttp2
     ];
 
     etc = {
