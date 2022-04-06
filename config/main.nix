@@ -130,8 +130,6 @@ in rec {
       
       desktopManager.gnome.enable = true;
     };
-    
-    printing.enable = true;
   };
 
   programs = {
@@ -169,6 +167,7 @@ in rec {
       python3Full
       llvmPackages_latest.llvm
       llvmPackages_latest.clang
+      gcc_latest
       nasm
       rustup
 
