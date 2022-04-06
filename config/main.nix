@@ -15,7 +15,7 @@ in rec {
       options ath9k nohwcrypt=1
     '';
 
-    kernelPackages = pkgs.linuxKernel.packageAliases.linux_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
 
     loader = {
       systemd-boot.enable = false;
