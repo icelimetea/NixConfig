@@ -23,6 +23,10 @@
                   sway-screen-size = prev.callPackage ./packages/sway-screen-size/pkg.nix {};
                 })
               ];
+
+              environment.sessionVariables = {
+	        NIX_PATH = "nixpkgs=${nixpkgs}";
+              };
 	    })
             ./config/main.nix
 	    ./config/hardware-configuration.nix
