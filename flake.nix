@@ -8,6 +8,7 @@
     nixosConfigurations = (
       let
         hostName = "lime-pc";
+	nixpkgsPath = "nixpkgs=${nixpkgs}";
       in {
         ${hostName} = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -24,9 +25,7 @@
                 })
               ];
 
-              environment.sessionVariables = {
-	        NIX_PATH = "nixpkgs=${nixpkgs}";
-              };
+              nix.nixPath = [ nixpkgsPath ];
 	    })
             ./config/main.nix
 	    ./config/hardware-configuration.nix
