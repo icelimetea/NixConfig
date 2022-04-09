@@ -225,6 +225,10 @@ in rec {
       nghttp2
     ];
 
+    sessionVariables = {
+      NIX_PATH = "nixpkgs=${nixpkgs}";
+    };
+
     etc = {
       "/sway/config.d/sway.conf".text = ''
         set $term alacritty
