@@ -22,7 +22,6 @@
               nixpkgs.overlays = [
                 (final: prev: {
                   sway-screen-size = prev.callPackage ./packages/sway-screen-size/default.nix {};
-		  llvm-cbe = prev.callPackage ./packages/llvm-cbe/default.nix {};
                 })
               ];
 

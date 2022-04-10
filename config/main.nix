@@ -222,7 +222,6 @@ in rec {
       file
       bc
       nghttp2
-      llvm-cbe
     ];
 
     etc = {
