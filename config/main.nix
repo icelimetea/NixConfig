@@ -221,8 +221,8 @@ in rec {
       pv
       file
       bc
-      unzip
       nghttp2
+      llvm-cbe
     ];
 
     etc = {
