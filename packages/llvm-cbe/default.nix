@@ -13,8 +13,8 @@ stdenv.mkDerivation {
     sha256 = "sha256-DPovfhjVMG/TdnhE5cVgI/33KHnWYgtQTNAYiyw2O+c=";
   };
 
-  preInstall = ''
-    mkdir ./bin
-    cp ./tools/llvm-cbe/llvm-cbe ./bin/llvm-cbe
+  postInstall = ''
+    mkdir $out/bin
+    cp ./tools/llvm-cbe/llvm-cbe $out/bin/llvm-cbe
   '';
 }
