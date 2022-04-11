@@ -65,7 +65,7 @@ in rec {
 
       enableStrongSwan = true;
 
-      packages = [ pkgs.networkmanager-openvpn ];
+      plugins = [ pkgs.networkmanager-openvpn ];
     };
 
     dhcpcd.enable = false;
