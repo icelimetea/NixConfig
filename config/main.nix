@@ -179,7 +179,7 @@ in rec {
       maven
 
       # Browsers
-      firefox-wayland
+      firefox-bin
 
       # Messaging apps
       tdesktop
