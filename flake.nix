@@ -1,5 +1,5 @@
 {
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/cc0d60827924b30fe30572201adafa66d847e044";
 
   description = "LimeTea's NixOS config";
 
