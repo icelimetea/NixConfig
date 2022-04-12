@@ -211,7 +211,6 @@ in rec {
       strongswan
       openvpn
       wireguard-tools
-      llvm-cbe
 
       # Desktop apps & utilities
       gnome.gnome-tweaks
