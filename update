@@ -4,3 +4,5 @@ nix flake update
 
 git add *
 git commit -m "Bump nixpkgs"
+
+nixos-rebuild boot --flake "$(dirname "$0")"
