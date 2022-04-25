@@ -205,7 +205,6 @@ in rec {
 
       # Games
       polymc
-      marble-marcher
 
       # Firmware
       (if isIntel then microcodeIntel else microcodeAmd)
