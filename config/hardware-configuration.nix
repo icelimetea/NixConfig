@@ -12,19 +12,4 @@
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/310a951e-9d49-49cf-91aa-3d999e5383fd";
-      fsType = "ext4";
-    };
-
-  fileSystems."/efi" =
-    { device = "/dev/disk/by-uuid/7D35-7712";
-      fsType = "vfat";
-    };
-
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/c52c1fb7-58b4-4d72-812d-9de136a4381c"; }
-    ];
-
 }

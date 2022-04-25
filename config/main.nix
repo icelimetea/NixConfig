@@ -37,6 +37,22 @@ in rec {
     };
   };
 
+  fileSystems."/efi" = {
+    label = "os-efi";
+    fsType = "vfat";
+  };
+
+  fileSystems."/" = {
+    label = "os-root";
+    fsType = "ext4";
+  };
+
+  swapDevices = [
+    {
+      label = "os-swap";
+    }
+  ];
+
   powerManagement.cpuFreqGovernor = "performance";
 
   hardware = {
