@@ -225,6 +225,7 @@ in rec {
       wireguard-tools
 
       # Desktop apps & utilities
+      alsa-utils
       gnome.gnome-tweaks
       libreoffice-fresh
       thunderbird
