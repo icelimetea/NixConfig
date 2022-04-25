@@ -122,7 +122,7 @@ in rec {
     pipewire = {
       enable = true;
 
-      alsa.enable = true;
+      alsa.enable = false;
       pulse.enable = true;
 
       wireplumber.enable = true;
