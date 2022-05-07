@@ -3,7 +3,7 @@
 
   description = "LimeTea's NixOS config";
 
-  outputs = { self, nixpkgs, mach-nix }: {
+  outputs = { self, nixpkgs }: {
 
     nixosConfigurations = (
       let
