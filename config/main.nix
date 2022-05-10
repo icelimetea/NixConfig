@@ -134,13 +134,9 @@ in rec {
       layout = "gb,ru";
       xkbOptions = "grp:caps_toggle";
       
-      displayManager.gdm = {
-        enable = true;
-
-        wayland = true;
-      };
+      displayManager.gdm.enable = true;
       
-      desktopManager.gnome.enable = true;
+      desktopManager.plasma5.enable = true;
     };
   };
 
@@ -226,7 +222,6 @@ in rec {
 
       # Desktop apps & utilities
       alsa-utils
-      gnome.gnome-tweaks
       libreoffice-fresh
       thunderbird
       wireshark
