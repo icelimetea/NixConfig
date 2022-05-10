@@ -134,7 +134,7 @@ in rec {
       layout = "gb,ru";
       xkbOptions = "grp:caps_toggle";
       
-      displayManager.gdm.enable = true;
+      displayManager.sddm.enable = true;
       
       desktopManager.plasma5.enable = true;
     };
