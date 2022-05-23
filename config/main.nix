@@ -151,7 +151,7 @@ in rec {
 	rofi
 	alacritty
       ];
-    }
+    };
 
     ssh = {
       enableAskPassword = true;
