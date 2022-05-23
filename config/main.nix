@@ -158,6 +158,10 @@ in rec {
       askPassword = "${pkgs.ksshaskpass}/bin/ksshaskpass";
 
       startAgent = true;
+
+      extraConfig = ''
+        AddKeysToAgent 5m
+      '';
     };
 
     java.enable = true;
