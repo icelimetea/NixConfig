@@ -160,11 +160,12 @@ in rec {
       startAgent = true;
 
       extraConfig = ''
-        AddKeysToAgent 5m
+        AddKeysToAgent yes
       '';
     };
 
     java.enable = true;
+    git.enable = true;
     wireshark.enable = true;
   };
 
@@ -193,7 +194,6 @@ in rec {
       # Development
       virtualenv
       emacs
-      git
       jetbrains.idea-community
       maven
 
