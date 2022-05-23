@@ -20,6 +20,7 @@
           system = "x86_64-linux";
 
           modules = [
+	    home-manager.nixosModules.home-manager
             ({ nixpkgs, ... }: {
 	      networking.hostName = hostName;
 
@@ -32,14 +33,13 @@
               ];
 
               nix.nixPath = [ nixpkgsPath ];
+
+              home-manager.useGlobalPkgs = true;
+
+              home-manager.users.lemontea = import ./config/per-user/lemontea.nix;
 	    })
             ./config/main.nix
 	    ./config/hardware-configuration.nix
-	    (home-manager.nixosModules.home-manager {
-	      home-manager.useGlobalPkgs = true;
-
-              home-manager.users.lemontea = import ./config/per-user/lemontea.nix
-            })
           ];
         };
       }
