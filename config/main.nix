@@ -134,13 +134,9 @@ in rec {
       layout = "gb,ru";
       xkbOptions = "grp:caps_toggle";
       
-      displayManager.gdm = {
-        enable = true;
-
-        wayland = true;
-      };
+      displayManager.sddm.enable = true;
       
-      desktopManager.gnome.enable = true;
+      desktopManager.plasma5.enable = true;
     };
   };
 
