@@ -151,6 +151,13 @@ in rec {
 	rofi
 	alacritty
       ];
+    }
+
+    ssh = {
+      enableAskPassword = true;
+      askPassword = "${pkgs.ksshaskpass}/bin/ksshaskpass";
+
+      startAgent = true;
     };
 
     java.enable = true;
@@ -233,10 +240,6 @@ in rec {
       bc
       nghttp2
     ];
-
-    sessionVariables = {
-      GIT_ASKPASS = "ksshaskpass";
-    };
 
     etc = {
       "/sway/config.d/sway.conf".text = ''
