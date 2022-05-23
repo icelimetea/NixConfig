@@ -1,4 +1,6 @@
 { config, pkgs, nixpkgs, ... }: rec {
+  hardware.pulseaudio.enable = false;
+
   services = {
     pipewire = {
       enable = true;

@@ -1,4 +1,23 @@
-{ config, pkgs, nixpkgs, ... }: {
+{ config, pkgs, nixpkgs, ... }:
+let
+  isIntel = true;
+in {
+  hardware = {
+    opengl = {
+      enable = true;
+
+      driSupport = true;
+      driSupport32Bit = true;
+
+      extraPackages = (if isIntel then [ pkgs.intel-media-driver ] else [ ]);
+    };
+
+    enableRedistributableFirmware = true;
+
+    cpu.intel.updateMicrocode = isIntel;
+    cpu.amd.updateMicrocode = !isIntel;
+  };
+
   programs = {
     ssh = {
       enableAskPassword = true;

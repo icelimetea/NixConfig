@@ -1,9 +1,5 @@
 
-{ config, pkgs, nixpkgs, ... }:
-
-let
-  isIntel = true;
-in rec {
+{ config, pkgs, nixpkgs, ... }: {
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
@@ -50,24 +46,6 @@ in rec {
   ];
 
   powerManagement.cpuFreqGovernor = "performance";
-
-  hardware = {
-    opengl = {
-      enable = true;
-
-      driSupport = true;
-      driSupport32Bit = true;
-
-      extraPackages = (if isIntel then [ pkgs.intel-media-driver ] else [ ]);
-    };
-
-    enableRedistributableFirmware = true;
-
-    cpu.intel.updateMicrocode = isIntel;
-    cpu.amd.updateMicrocode = !isIntel;
-    
-    pulseaudio.enable = false;
-  };
 
   networking = {
     useDHCP = false;
