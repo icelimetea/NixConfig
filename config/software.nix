@@ -20,6 +20,8 @@ in {
 
   programs = {
     ssh = {
+      startAgent = true;
+
       enableAskPassword = true;
       askPassword = "${pkgs.ksshaskpass}/bin/ksshaskpass";
 
@@ -32,7 +34,6 @@ in {
       enable = true;
 
       pinentryFlavor = "qt";
-      enableSSHSupport = true;
     };
 
     java.enable = true;
@@ -40,67 +41,69 @@ in {
     wireshark.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    # Programming languages
-    python3Full
-    llvmPackages_latest.llvm
-    llvmPackages_latest.clang
-    gcc_latest
-    nasm
-    rustup
+  environment = {
+    systemPackages = with pkgs; [
+      # Programming languages
+      python3Full
+      llvmPackages_latest.llvm
+      llvmPackages_latest.clang
+      gcc_latest
+      nasm
+      rustup
 
-    # Development
-    virtualenv
-    emacs
-    jetbrains.idea-community
-    maven
+      # Development
+      virtualenv
+      emacs
+      jetbrains.idea-community
+      maven
 
-    # Browsers
-    firefox-wayland
-    chromium
+      # Browsers
+      firefox-wayland
+      chromium
 
-    # Messaging apps
-    tdesktop
+      # Messaging apps
+      tdesktop
 
-    # Media
-    obs-studio
-    gimp
-    imagemagick
-    ffmpeg
+      # Media
+      obs-studio
+      gimp
+      imagemagick
+      ffmpeg
 
-    # Games
-    polymc
+      # Games
+      polymc
 
-    # Firmware
-    (if isIntel then microcodeIntel else microcodeAmd)
+      # Firmware
+      (if isIntel then microcodeIntel else microcodeAmd)
 
-    # System administration
-    ksshaskpass
-    smartmontools
-    dmidecode
-    usbutils
-    pciutils
-    inetutils
-    ldns
-    libva-utils
-    openssh
-    openssl
-    strongswan
-    openvpn
-    wireguard-tools
+      # System administration
+      ksshaskpass
+      smartmontools
+      dmidecode
+      usbutils
+      pciutils
+      inetutils
+      ldns
+      libva-utils
+      openssh
+      openssl
+      strongswan
+      openvpn
+      wireguard-tools
 
-    # Desktop apps & utilities
-    alsa-utils
-    libreoffice-fresh
-    thunderbird
-    wireshark
-    easyeffects
-    youtube-dl
-    pv
-    file
-    bc
-    nghttp2
-  ];
+      # Desktop apps & utilities
+      alsa-utils
+      libreoffice-fresh
+      thunderbird
+      wireshark
+      easyeffects
+      youtube-dl
+      pv
+      file
+      bc
+      nghttp2
+    ];
 
-  environment.sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
+    sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
+  };
 }
