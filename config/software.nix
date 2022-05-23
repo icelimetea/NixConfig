@@ -98,5 +98,5 @@ in {
     nghttp2
   ];
 
-  environment.sessionVariables.GIT_ASKPASS = "${pkgs.ksshaskpass}/bin/ksshaskpass";
+  environment.sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
 }
