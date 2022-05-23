@@ -38,7 +38,9 @@
 
               home-manager.users.lemontea = import ./config/per-user/lemontea.nix;
 	    })
-            ./config/main.nix
+	    ./config/desktop.nix
+	    ./config/software.nix
+            ./config/misc.nix
 	    ./config/hardware-configuration.nix
           ];
         };
