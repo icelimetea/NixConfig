@@ -26,7 +26,7 @@ in {
       askPassword = "${pkgs.ksshaskpass}/bin/ksshaskpass";
 
       extraConfig = ''
-        AddKeysToAgent yes
+        AddKeysToAgent 5m
       '';
     };
 
