@@ -9,6 +9,11 @@
     
     userName = "icelimetea";
     userEmail = "fr3shtea@outlook.com";
+
+    signing = {
+      key = "AC66E459E2A684D825DF2497206D220EAB0F313F";
+      signByDefault = true;
+    };
   };
 
   programs.ssh = {
