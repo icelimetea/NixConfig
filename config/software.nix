@@ -23,11 +23,16 @@ in {
       enableAskPassword = true;
       askPassword = "${pkgs.ksshaskpass}/bin/ksshaskpass";
 
-      startAgent = true;
-
       extraConfig = ''
         AddKeysToAgent yes
       '';
+    };
+
+    gnupg.agent = {
+      enable = true;
+
+      pinentryFlavor = "qt";
+      enableSSHSupport = true;
     };
 
     java.enable = true;
@@ -80,7 +85,6 @@ in {
     libva-utils
     openssh
     openssl
-    gnupg
     strongswan
     openvpn
     wireguard-tools
