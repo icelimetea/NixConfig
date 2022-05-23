@@ -206,6 +206,7 @@ in rec {
       (if isIntel then microcodeIntel else microcodeAmd)
 
       # System administration
+      ksshaskpass
       smartmontools
       dmidecode
       usbutils
@@ -232,6 +233,10 @@ in rec {
       bc
       nghttp2
     ];
+
+    sessionVariables = {
+      GIT_ASKPASS = "ksshaskpass";
+    };
 
     etc = {
       "/sway/config.d/sway.conf".text = ''
