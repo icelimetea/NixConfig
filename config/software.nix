@@ -59,7 +59,6 @@ in {
 
       # Browsers
       firefox-wayland
-      chromium
 
       # Messaging apps
       tdesktop
