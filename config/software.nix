@@ -19,21 +19,10 @@ in {
   };
 
   programs = {
-    ssh = {
-      startAgent = true;
-
-      enableAskPassword = true;
-      askPassword = "${pkgs.ksshaskpass}/bin/ksshaskpass";
-
-      extraConfig = ''
-        AddKeysToAgent 5m
-      '';
-    };
-
     gnupg.agent = {
       enable = true;
 
-      pinentryFlavor = "qt";
+      pinentryFlavor = "gnome";
     };
 
     java.enable = true;
@@ -76,7 +65,6 @@ in {
       (if isIntel then microcodeIntel else microcodeAmd)
 
       # System administration
-      ksshaskpass
       smartmontools
       dmidecode
       usbutils
@@ -102,7 +90,5 @@ in {
       bc
       nghttp2
     ];
-
-    sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
   };
 }
