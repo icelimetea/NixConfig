@@ -22,7 +22,7 @@ in {
     gnupg.agent = {
       enable = true;
 
-      pinentryFlavor = "gnome";
+      pinentryFlavor = "gnome3";
     };
 
     java.enable = true;
