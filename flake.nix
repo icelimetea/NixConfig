@@ -33,6 +33,10 @@
               ];
 
               nix = {
+	        extraOptions = ''
+		  experimental-features = nix-command flakes
+                '';
+
 	        nixPath = [ nixpkgsPath ];
 
                 settings.max-jobs = 1;
