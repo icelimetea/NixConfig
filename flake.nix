@@ -39,7 +39,7 @@
 
 	        nixPath = [ nixpkgsPath ];
 
-                settings.max-jobs = 1;
+                settings.max-jobs = 2;
 	      };
 
               home-manager.useGlobalPkgs = true;
