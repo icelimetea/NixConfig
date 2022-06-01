@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,7 +32,11 @@
                 })
               ];
 
-              nix.nixPath = [ nixpkgsPath ];
+              nix = {
+	        nixPath = [ nixpkgsPath ];
+
+                settings.max-jobs = 1;
+	      };
 
               home-manager.useGlobalPkgs = true;
 
