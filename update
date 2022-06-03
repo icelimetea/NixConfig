@@ -7,4 +7,4 @@ git commit -m "Bump nixpkgs"
 
 git push
 
-sudo nixos-rebuild boot --flake "$(dirname "$0")"
+sudo time nixos-rebuild boot --flake "$(dirname "$0")"
