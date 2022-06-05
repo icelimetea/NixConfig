@@ -18,6 +18,12 @@ in {
     cpu.amd.updateMicrocode = !isIntel;
   };
 
+  virtualisation.libvirtd = {
+    enable = true;
+
+    qemu.package = pkgs.qemu_kvm;
+  };
+
   programs = {
     gnupg.agent = {
       enable = true;
@@ -65,6 +71,7 @@ in {
       (if isIntel then microcodeIntel else microcodeAmd)
 
       # System administration
+      virt-manager
       smartmontools
       dmidecode
       usbutils
