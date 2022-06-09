@@ -18,19 +18,15 @@ in {
     cpu.amd.updateMicrocode = !isIntel;
   };
 
-  virtualisation = {
-    libvirtd = {
-      enable = false;
+  virtualisation.libvirtd = {
+    enable = false;
 
-      qemu = {
-        package = pkgs.qemu_kvm;
+    qemu = {
+      package = pkgs.qemu_kvm;
 
-        ovmf.enable = true;
-        swtpm.enable = true;
-      };
+      ovmf.enable = true;
+      swtpm.enable = true;
     };
-
-    vmware.host.enable = true;
   };
 
   programs = {

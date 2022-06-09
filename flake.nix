@@ -24,9 +24,7 @@
             ({ nixpkgs, ... }: {
 	      networking.hostName = hostName;
 
-              system.stateVersion = "21.05";
-
-              nixpkgs.config.allowUnfree = true;
+              system.stateVersion = "22.05";
 
               nixpkgs.overlays = [
                 (final: prev: {
