@@ -53,7 +53,7 @@ in {
 
       # Development
       virtualenv
-      neovim
+      emacs
       jetbrains.idea-community
       maven
 
