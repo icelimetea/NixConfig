@@ -53,12 +53,13 @@ in {
 
       # Development
       virtualenv
-      emacs
+      vim
       jetbrains.idea-community
       maven
 
       # Browsers
       firefox-wayland
+      chromium
 
       # Messaging apps
       tdesktop
