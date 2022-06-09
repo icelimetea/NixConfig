@@ -26,6 +26,8 @@
 
               system.stateVersion = "21.05";
 
+              nixpkgs.config.allowUnfree = true;
+
               nixpkgs.overlays = [
                 (final: prev: {
                   sway-screen-size = prev.callPackage ./packages/sway-screen-size {};
