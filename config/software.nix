@@ -21,7 +21,12 @@ in {
   virtualisation.libvirtd = {
     enable = true;
 
-    qemu.package = pkgs.qemu_kvm;
+    qemu = {
+      package = pkgs.qemu_kvm;
+
+      ovmf.enable = true;
+      swtpm.enable = true;
+    }
   };
 
   programs = {
