@@ -26,7 +26,7 @@ in {
 
       ovmf.enable = true;
       swtpm.enable = true;
-    }
+    };
   };
 
   programs = {
