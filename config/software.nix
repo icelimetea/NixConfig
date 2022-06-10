@@ -1,7 +1,12 @@
-{ config, pkgs, nixpkgs, ... }:
+{ pkgs, lib, nixpkgs, ... }:
 let
   isIntel = true;
 in {
+  nixpkgs.config.allowUnfreePredicate = pkg: (lib.getName pkg) [
+    "steam-original"
+    "steam-runtime"
+  ];
+
   hardware = {
     opengl = {
       enable = true;
@@ -72,6 +77,7 @@ in {
 
       # Games
       polymc
+      steam
 
       # Firmware
       (if isIntel then microcodeIntel else microcodeAmd)
