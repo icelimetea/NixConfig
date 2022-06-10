@@ -2,6 +2,12 @@
 let
   isIntel = true;
 in {
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "steam"
+    "steam-original"
+    "steam-runtime"
+  ];
+
   hardware = {
     opengl = {
       enable = true;
@@ -39,6 +45,8 @@ in {
     java.enable = true;
     git.enable = true;
     wireshark.enable = true;
+
+    
   };
 
   environment = {
