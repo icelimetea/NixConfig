@@ -2,7 +2,7 @@
 let
   isIntel = true;
 in {
-  nixpkgs.config.allowUnfreePredicate = pkg: (lib.getName pkg) [
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam-original"
     "steam-runtime"
   ];
