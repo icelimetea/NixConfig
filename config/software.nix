@@ -45,17 +45,6 @@ in {
     java.enable = true;
     git.enable = true;
     wireshark.enable = true;
-
-    firejail = {
-      enable = true;
-
-      wrappedBinaries = {
-        steam = {
-	  executable = "${pkgs.steam}/bin/steam";
-	  profile = "${pkgs.firejail}/etc/firejail/steam.profile";
-        };
-      };
-    };
   };
 
   environment = {
@@ -89,6 +78,7 @@ in {
 
       # Games
       polymc
+      steam
 
       # Firmware
       (if isIntel then microcodeIntel else microcodeAmd)
