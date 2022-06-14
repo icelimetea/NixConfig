@@ -1,8 +1,8 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "github:NixOS/nixpkgs/54c558e455030017e73b72fb7b3f591f5b4c6829";
     home-manager = {
-      url = "github:nix-community/home-manager/935ecea67d59f2af9d9f56d18a8f0dc12fb18cfd";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
