@@ -71,6 +71,7 @@ in {
       virtualenv
       emacs
       jetbrains.idea-community
+      jetbrains.pycharm-community
       maven
 
       # Browsers
@@ -112,13 +113,8 @@ in {
       alsa-utils
       libreoffice-fresh
       thunderbird
-      wireshark
-      easyeffects
-      youtube-dl
-      pv
       file
       bc
-      nghttp2
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
