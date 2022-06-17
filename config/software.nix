@@ -36,10 +36,20 @@ in {
   };
 
   programs = {
+    ssh = {
+      startAgent = true;
+
+      askPassword = "${pkgs.ksshaskpass}/bin/ksshaskpass";
+
+      enableAskPassword = true;
+
+      agentTimeout = "5m";
+    };
+
     gnupg.agent = {
       enable = true;
 
-      pinentryFlavor = "gnome3";
+      pinentryFlavor = "qt";
     };
 
     java.enable = true;
@@ -110,5 +120,7 @@ in {
       bc
       nghttp2
     ];
+
+    systemVariables.SSH_ASKPASS_REQUIRE = "prefer";
   };
 }
