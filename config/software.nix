@@ -82,6 +82,7 @@ in {
       tdesktop
 
       # Media
+      easyeffects
       obs-studio
       gimp
       imagemagick
