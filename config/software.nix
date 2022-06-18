@@ -8,6 +8,8 @@ in {
     "steam-runtime"
   ];
 
+  services.flatpak.enable = true;
+
   hardware = {
     opengl = {
       enable = true;
