@@ -104,6 +104,7 @@ in {
       usbutils
       pciutils
       inetutils
+      wireshark
       ldns
       libva-utils
       openssh
