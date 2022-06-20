@@ -93,6 +93,7 @@ in {
       # Games
       polymc
       steam
+      steam.run
 
       # Firmware
       (if isIntel then microcodeIntel else microcodeAmd)
