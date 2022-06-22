@@ -66,6 +66,7 @@ in {
       llvmPackages_latest.llvm
       llvmPackages_latest.clang
       gcc_latest
+      gdb
       nasm
       rustup
 
