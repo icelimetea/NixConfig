@@ -14,7 +14,7 @@
     xserver = {
       enable = true;
     
-      layout = "gb,ru";
+      layout = "us,ru";
       xkbOptions = "grp:caps_toggle";
 
       displayManager.sddm.enable = true;

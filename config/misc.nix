@@ -1,7 +1,7 @@
 
 { config, pkgs, nixpkgs, ... }: {
   boot = {
-    initrd.luks.devices.osroot = { device = "/dev/disk/by-uuid/6a952187-6b91-4496-92d1-aad3b941e9b7"; };
+    initrd.luks.devices.osroot = { device = "/dev/disk/by-uuid/be95d7bc-4ee4-491b-b4b9-0eb8c32fdc9c"; };
 
     kernelPackages = pkgs.linuxPackages_latest;
 
@@ -26,18 +26,18 @@
   };
 
   fileSystems."/efi" = {
-    label = "os-efi";
+    label = "efi-part";
     fsType = "vfat";
   };
 
   fileSystems."/" = {
-    label = "os-root";
+    device = "/dev/root-group/root-vol";
     fsType = "ext4";
   };
 
   swapDevices = [
     {
-      label = "os-swap";
+      device = "/dev/root-group/swap-vol";
     }
   ];
 
@@ -63,7 +63,7 @@
   
   console = {
     font = "Lat2-Terminus16";
-    keyMap = "uk";
+    keyMap = "us";
   };
 
   services.fwupd.enable = true;
