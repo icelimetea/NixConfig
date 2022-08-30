@@ -1,4 +1,3 @@
-
 { config, pkgs, nixpkgs, ... }: {
   boot = {
     initrd.luks.devices.osroot = { device = "/dev/disk/by-uuid/be95d7bc-4ee4-491b-b4b9-0eb8c32fdc9c"; };
@@ -49,9 +48,17 @@
     networkmanager = {
       enable = true;
 
+      dns = "none";
+
       enableStrongSwan = true;
 
       plugins = [ pkgs.networkmanager-openvpn ];
+    };
+
+    resolvconf = {
+      enable = true;
+
+      useLocalResolver = true;
     };
 
     dhcpcd.enable = false;
@@ -66,8 +73,15 @@
     keyMap = "us";
   };
 
-  services.fwupd.enable = true;
-  services.thermald.enable = true;
+  services = {
+    fwupd.enable = true;
+
+    kresd = {
+      enable = true;
+
+      extraConfig = "policy.add(policy.all(policy.TLS_FORWARD{{ '1.0.0.1', hostname = 'cloudflare-dns.com' }}))";
+    };
+  };
 
   security = {
     rtkit.enable = true;
