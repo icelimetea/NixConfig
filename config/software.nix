@@ -48,12 +48,6 @@ in {
       agentTimeout = "5m";
     };
 
-    gnupg.agent = {
-      enable = true;
-
-      pinentryFlavor = "qt";
-    };
-
     java.enable = true;
     git.enable = true;
     wireshark.enable = true;
