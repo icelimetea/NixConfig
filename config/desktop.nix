@@ -7,7 +7,7 @@
 
       settings = {
         General = {
-	  Experimental = true;
+	  # Experimental = true;
         };
       };
     };
