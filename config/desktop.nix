@@ -6,7 +6,9 @@
       enable = true;
 
       settings = {
-        Experimental = true;
+        General = {
+	  Experimental = true;
+        };
       };
     };
   };
