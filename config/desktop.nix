@@ -2,10 +2,18 @@
   hardware = {
     pulseaudio.enable = false;
 
-    bluetooth.enable = true;
+    bluetooth = {
+      enable = true;
+
+      settings = {
+        Experimental = true;
+      };
+    };
   };
 
   services = {
+    upower.enable = true;
+
     pipewire = {
       enable = true;
 
