@@ -42,5 +42,5 @@
 
 						     	   home.stateVersion = stateVersion;
 						   	 };
-						       in baseCfg // (import (../config/per-user + "/${userName}.nix") (cfgArgs // baseCfg));
+						       in baseCfg // (import (../config/per-user + "/${userName}.nix") (baseCfg.home // cfgArgs));
 }

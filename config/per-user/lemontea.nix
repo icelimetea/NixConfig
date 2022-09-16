@@ -1,4 +1,4 @@
-{ config, pkgs, home, ... }: {
+{ config, pkgs, ... }: {
   programs.git = {
     enable = true;
     
@@ -13,12 +13,12 @@
       github = {
         host = "github.com";
 
-        identityFile = [ "${home.homeDirectory}/.ssh/id_github" ];
+        identityFile = [ "${homeDirectory}/.ssh/id_github" ];
       };
       gitlab = {
         host = "gitlab.com";
 
-        identityFile = [ "${home.homeDirectory}/.ssh/id_gitlab" ];
+        identityFile = [ "${homeDirectory}/.ssh/id_gitlab" ];
       };
     };
   };
