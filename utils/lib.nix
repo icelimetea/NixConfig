@@ -35,12 +35,14 @@
     ];
   };
 
-  _mkDefaultUserCfg = userName: stateVersion: { ... } @ cfgArgs: let
+  _mkDefaultUserCfg = userName:
+  		      stateVersion:
+		      { config, pkgs, ... } @ cfgArgs: let
 			    			         baseCfg = {
 			      			     	   home.username = userName;
 			      			     	   home.homeDirectory = "/home/${userName}";
 
 						     	   home.stateVersion = stateVersion;
-						   	 };
+						         };
 						       in baseCfg // (import (../config/per-user + "/${userName}.nix") (baseCfg.home // cfgArgs));
 }
