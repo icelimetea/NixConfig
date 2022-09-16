@@ -8,7 +8,7 @@ in {
     "steam-runtime"
   ];
 
-  services.flatpak.enable = true;
+  services.monero.enable = true;
 
   hardware = {
     opengl = {
