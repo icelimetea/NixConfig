@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, homeDirectory, ... }: {
   programs.git = {
     enable = true;
     
