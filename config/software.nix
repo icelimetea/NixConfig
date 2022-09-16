@@ -96,6 +96,7 @@ in {
       # System administration
       virt-manager
       smartmontools
+      nvme-cli
       dmidecode
       usbutils
       pciutils
@@ -110,6 +111,7 @@ in {
       wireguard-tools
 
       # Desktop apps & utilities
+      monero-gui
       alsa-utils
       libreoffice-fresh
       thunderbird
