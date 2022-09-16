@@ -15,12 +15,12 @@
       github = {
         host = "github.com";
 
-        identityFile = [ "${homeDirectory}/.ssh/id_github" ];
+        #identityFile = [ "${homeDirectory}/.ssh/id_github" ];
       };
       gitlab = {
         host = "gitlab.com";
 
-        identityFile = [ "${homeDirectory}/.ssh/id_gitlab" ];
+        #identityFile = [ "${homeDirectory}/.ssh/id_gitlab" ];
       };
     };
   };
