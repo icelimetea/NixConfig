@@ -11,53 +11,27 @@
 
   outputs = { self, nixpkgs, home-manager }: {
 
-    nixosConfigurations = (
-      let
-        hostName = "lime-pc";
-	nixpkgsPath = "nixpkgs=${nixpkgs}";
-      in {
-        ${hostName} = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-
-          modules = [
-	    home-manager.nixosModules.home-manager
-            ({ nixpkgs, ... }: {
-	      networking.hostName = hostName;
-
-              system.stateVersion = "22.05";
-
-              nixpkgs.overlays = [
-                (final: prev: {
-                  sway-screen-size = prev.callPackage ./packages/sway-screen-size {};
-                })
-              ];
-
-              nix = {
-	        extraOptions = ''
-		  experimental-features = nix-command flakes
-                '';
-
-	        nixPath = [ nixpkgsPath ];
-
-                settings = {
-		  max-jobs = 2;
-
-                  auto-optimise-store = true;
-		};
-	      };
-
-              home-manager.useGlobalPkgs = true;
-
-              home-manager.users.lemontea = import ./config/per-user/lemontea.nix;
-	    })
-	    ./config/desktop.nix
-	    ./config/software.nix
-            ./config/misc.nix
-	    ./config/hardware-configuration.nix
-          ];
+    nixosConfigurations =
+    	let
+	  configLib = import ./utils/lib.nix {
+	    inherit home-manager;
+	  };
+	in configLib.mkConfig {
+	  "lime-pc" = {
+	    systemKind = "x86_64-linux";
+	    users = { "lemontea" = [ "wheel" ]; };
+	    systemModules = [
+	      ({ nixpkgs } : {
+	        nixpkgs.overlays = [
+		  (final: prev: { sway-screen-size = prev.callPackage ./packages/sway-screen-size {}; })
+		];
+	      })
+	      ./config/desktop.nix
+	      ./config/software.nix
+	      ./config/misc.nix
+	      ./config/hardware-configuration.nix
+            ];
+	  };
         };
-      }
-    );
-
   };
 }

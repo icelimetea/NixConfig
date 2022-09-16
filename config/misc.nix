@@ -88,11 +88,4 @@
     rtkit.enable = true;
     sudo.enable = true;
   };
-
-  users.users = {
-    lemontea = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" ];
-    };
-  };
 }
