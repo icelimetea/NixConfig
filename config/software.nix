@@ -8,8 +8,6 @@ in {
     "steam-runtime"
   ];
 
-  services.monero.enable = true;
-
   hardware = {
     opengl = {
       enable = true;
