@@ -35,7 +35,7 @@
     ];
   };
 
-  _mkDefaultUserCfg = userName: stateVersion: { config, pkgs, ... } @ cfgArgs: let
+  _mkDefaultUserCfg = userName: stateVersion: { ... } @ cfgArgs: let
 			    			         baseCfg = {
 			      			     	   home.username = userName;
 			      			     	   home.homeDirectory = "/home/${userName}";
