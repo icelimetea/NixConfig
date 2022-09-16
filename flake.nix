@@ -14,6 +14,7 @@
     nixosConfigurations =
     	let
 	  configLib = import ./utils/lib.nix {
+	    inherit nixpkgs;
 	    inherit home-manager;
 	  };
 	in configLib.mkConfig {
@@ -21,7 +22,7 @@
 	    systemKind = "x86_64-linux";
 	    users = { "lemontea" = [ "wheel" ]; };
 	    systemModules = [
-	      ({ nixpkgs } : {
+	      ({ nixpkgs, ... } : {
 	        nixpkgs.overlays = [
 		  (final: prev: { sway-screen-size = prev.callPackage ./packages/sway-screen-size {}; })
 		];

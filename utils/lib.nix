@@ -1,4 +1,4 @@
-{ home-manager }: rec {
+{ nixpkgs, home-manager }: rec {
   mkConfig = hostCfgs: builtins.mapAttrs
 				(hostName: cfg: _mkHostConfig (cfg // { inherit hostName; }))
 				hostCfgs;
@@ -8,14 +8,16 @@
 
     modules = systemModules ++ [
       home-manager.nixosModules.home-manager
-      ({ nixpkgs, ... }: {
+      (let
+        nixpkgsPath = "nixpkgs=${nixpkgs}";
+      in { nixpkgs, ... }: {
 	networking.hostName = hostName;
 
         system.stateVersion = "22.05";
 
         nix.extraOptions = "experimental-features = nix-command flakes";
 
-        nix.nixPath = [ "nixpkgs=${nixpkgs}" ];
+        nix.nixPath = [ nixpkgsPath ];
 
         users.users = builtins.mapAttrs
 				(userName: userGroups: {
@@ -30,7 +32,7 @@
 					(x: y: x // y)
 					{}
 					(map
-						(userName: { "${userName}" = import (./config/per-user + "/${userName}.nix"); })
+						(userName: { "${userName}" = import (../config/per-user + "/${userName}.nix"); })
 					  	(builtins.attrNames users)
 					);
       })
