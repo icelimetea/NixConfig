@@ -1,6 +1,4 @@
-{ config, pkgs, ... } @ args: {
-  importantField = builtins.trace args;
-
+{ config, pkgs, ... }: {
   programs.git = {
     enable = true;
     
