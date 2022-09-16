@@ -28,13 +28,9 @@
 
         home-manager.useGlobalPkgs = true;
 
-        home-manager.users = builtins.foldl'
-					(x: y: x // y)
-					{}
-					(map
-						(userName: { "${userName}" = import (../config/per-user + "/${userName}.nix"); })
-					  	(builtins.attrNames users)
-					);
+        home-manager.users = builtins.mapAttrs
+					(userName: userGroups: import (../config/per-user + "/${userName}.nix"))
+					users;
       })
     ];
   };
