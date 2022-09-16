@@ -1,4 +1,6 @@
-{ config, pkgs, homeDirectory, ... }: {
+{ config, pkgs, homeDirectory, ... } @ args: {
+  importantField = builtins.trace args;
+
   programs.git = {
     enable = true;
     
