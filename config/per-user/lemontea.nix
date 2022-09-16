@@ -1,9 +1,4 @@
-{ config, pkgs, ... } : rec {
-  home.username = "lemontea";
-  home.homeDirectory = "/home/${home.username}";
-
-  home.stateVersion = "22.05";
-
+{ config, pkgs, ... }: {
   programs.git = {
     enable = true;
     

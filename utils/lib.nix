@@ -3,7 +3,7 @@
 				(hostName: cfg: _mkHostConfig (cfg // { inherit hostName; }))
 				hostCfgs;
 
-  _mkHostConfig = { hostName, systemKind, users, systemModules }: nixpkgs.lib.nixosSystem {
+  _mkHostConfig = { hostName, systemKind, users, systemModules, stateVersion }: nixpkgs.lib.nixosSystem {
     system = systemKind;
 
     modules = systemModules ++ [
@@ -13,7 +13,7 @@
       in { nixpkgs, ... }: {
 	networking.hostName = hostName;
 
-        system.stateVersion = "22.05";
+        system.stateVersion = stateVersion;
 
         nix.extraOptions = "experimental-features = nix-command flakes";
 
@@ -21,17 +21,26 @@
 
         users.users = builtins.mapAttrs
 				(userName: userGroups: {
-				 	  isNormalUser = true;
-					  extraGroups = userGroups;
+				  isNormalUser = true;
+				  extraGroups = userGroups;
 				})
 				users;
 
         home-manager.useGlobalPkgs = true;
 
         home-manager.users = builtins.mapAttrs
-					(userName: userGroups: import (../config/per-user + "/${userName}.nix"))
+					(userName: userGroups: _mkDefaultUserCfg userName stateVersion)
 					users;
       })
     ];
   };
+
+  _mkDefaultUserCfg = userName: stateVersion: cfgArgs: let
+			    			         baseCfg = {
+			      			     	   home.username = userName;
+			      			     	   home.homeDirectory = "/home/${userName}";
+
+						     	   home.stateVersion = stateVersion;
+						   	 };
+						       in baseCfg // (import (../config/per-user + "/${userName}.nix") (cfgArgs // baseCfg));
 }

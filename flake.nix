@@ -19,6 +19,7 @@
 	  };
 	in configLib.mkConfig {
 	  "lime-pc" = {
+	    stateVersion = "22.05";
 	    systemKind = "x86_64-linux";
 	    users = { "lemontea" = [ "wheel" ]; };
 	    systemModules = [
