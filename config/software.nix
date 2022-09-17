@@ -15,6 +15,11 @@ in {
       cpu = {
         enabled = true;
         yield = false;
+	"*" = {
+	  intensity = 5;
+	  threads = 4;
+	  affinity = -1;
+        };
       };
 
       pools = [
