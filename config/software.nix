@@ -20,8 +20,9 @@ in {
       pools = [
         {
 	  coin = "monero";
-	  url = "xmr-eu1.nanopool.org";
+	  url = "pool.hashvault.pro:80";
 	  user = "8Ajcii9yKrggoBSGmLjzM5iUQfxdZK42jaoxS1y3rb13eLxN4kBUTUm8PAqGKef4xHDmaw4N2KtAEG76W35Wz5853yVmqbx";
+	  pass = "x";
 	}
       ];
     };
