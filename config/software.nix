@@ -8,6 +8,25 @@ in {
     "steam-runtime"
   ];
 
+  services.xmrig = {
+    enable = true;
+
+    settings = {
+      cpu = {
+        enabled = true;
+        yield = false;
+      };
+
+      pools = [
+        {
+	  coin = "monero";
+	  url = "xmr-eu1.nanopool.org";
+	  user = "8Ajcii9yKrggoBSGmLjzM5iUQfxdZK42jaoxS1y3rb13eLxN4kBUTUm8PAqGKef4xHDmaw4N2KtAEG76W35Wz5853yVmqbx";
+	}
+      ];
+    };
+  };
+
   hardware = {
     opengl = {
       enable = true;
