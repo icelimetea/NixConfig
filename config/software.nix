@@ -8,31 +8,6 @@ in {
     "steam-runtime"
   ];
 
-  services.xmrig = {
-    enable = true;
-
-    settings = {
-      cpu = {
-        enabled = true;
-        yield = false;
-	"*" = {
-	  intensity = 5;
-	  threads = 4;
-	  affinity = -1;
-        };
-      };
-
-      pools = [
-        {
-	  coin = "monero";
-	  url = "pool.hashvault.pro:80";
-	  user = "8Ajcii9yKrggoBSGmLjzM5iUQfxdZK42jaoxS1y3rb13eLxN4kBUTUm8PAqGKef4xHDmaw4N2KtAEG76W35Wz5853yVmqbx";
-	  pass = "x";
-	}
-      ];
-    };
-  };
-
   hardware = {
     opengl = {
       enable = true;
