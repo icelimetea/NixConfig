@@ -6,7 +6,6 @@ in {
     "steam"
     "steam-original"
     "steam-runtime"
-    "cloudflare-warp"
   ];
 
   hardware = {
@@ -116,7 +115,6 @@ in {
       thunderbird
       file
       bc
-      cloudflare-warp
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
