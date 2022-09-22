@@ -115,7 +115,7 @@ in {
       thunderbird
       file
       bc
-      wgcf
+      cloudflare-warp
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
