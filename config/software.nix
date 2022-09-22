@@ -6,6 +6,7 @@ in {
     "steam"
     "steam-original"
     "steam-runtime"
+    "cloudflare-warp"
   ];
 
   hardware = {
