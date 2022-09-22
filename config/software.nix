@@ -109,6 +109,7 @@ in {
       wireguard-tools
 
       # Desktop apps & utilities
+      bitcoin
       monero-gui
       alsa-utils
       libreoffice-fresh
