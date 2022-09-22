@@ -115,6 +115,7 @@ in {
       thunderbird
       file
       bc
+      wgcf
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
