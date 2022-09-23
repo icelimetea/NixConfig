@@ -25,7 +25,7 @@ in {
   };
 
   virtualisation.libvirtd = {
-    enable = false;
+    enable = true;
 
     qemu = {
       package = pkgs.qemu_kvm;
@@ -60,6 +60,7 @@ in {
       gcc_latest
       gdb
       nasm
+      nodejs
       rustup
 
       # Development
@@ -99,13 +100,10 @@ in {
       usbutils
       pciutils
       inetutils
-      wireshark
       ldns
       libva-utils
       openssh
       openssl
-      strongswan
-      openvpn
       wireguard-tools
 
       # Desktop apps & utilities
