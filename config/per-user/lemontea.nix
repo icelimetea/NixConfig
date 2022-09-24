@@ -13,11 +13,11 @@
       ".doom.d/packages.el".source = ./emacs/packages.el;
       
       ".doom.d/config.el'.text = ''
-        (setq user-full-name "${programs.git.userName}"
-	      user-mail-address "${programs.git.userEmail}"
+        (setq user-full-name \"${programs.git.userName}\"
+	      user-mail-address \"${programs.git.userEmail}\"
 	      doom-theme 'doom-one
 	      display-line-numbers-type t
-	      org-directory "~/org/")
+	      org-directory \"~/org/\")
       '';
     };
   };
