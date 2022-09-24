@@ -37,12 +37,12 @@
 
   _mkDefaultUserCfg = userName:
   		      stateVersion:
-		      { config, pkgs, ... } @ cfgArgs: let
+		      { config, pkgs, lib, ... } @ cfgArgs: let
 			    			         baseCfg = {
 			      			     	   home.username = userName;
 			      			     	   home.homeDirectory = "/home/${userName}";
 
 						     	   home.stateVersion = stateVersion;
 						         };
-						       in baseCfg // (import (../config/per-user + "/${userName}.nix") (baseCfg.home // cfgArgs));
+						       in baseCfg // (import (../config/per-user + "/${userName}.nix") (baseCfg // cfgArgs));
 }

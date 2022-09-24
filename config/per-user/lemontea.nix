@@ -1,4 +1,4 @@
-{ config, pkgs, lib, homeDirectory, ... }: {
+{ config, pkgs, lib, home, ... }: {
   home.activation = {
     configureEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       
@@ -19,12 +19,12 @@
       github = {
         host = "github.com";
 
-        identityFile = [ "${homeDirectory}/.ssh/id_github" ];
+        identityFile = [ "${home.homeDirectory}/.ssh/id_github" ];
       };
       gitlab = {
         host = "gitlab.com";
 
-        identityFile = [ "${homeDirectory}/.ssh/id_gitlab" ];
+        identityFile = [ "${home.homeDirectory}/.ssh/id_gitlab" ];
       };
     };
   };
