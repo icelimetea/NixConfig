@@ -1,4 +1,10 @@
-{ config, pkgs, homeDirectory, ... }: {
+{ config, pkgs, lib, homeDirectory, ... }: {
+  home.activation = {
+    configureEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      
+    '';
+  };
+
   programs.git = {
     enable = true;
     
