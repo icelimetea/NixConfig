@@ -1,7 +1,5 @@
 { config, pkgs, nixpkgs, ... }: {
   boot = {
-    initrd.luks.devices.osroot = { device = "/dev/disk/by-uuid/3935fccc-b56d-4c41-84f4-0cbac07aca09"; };
-
     kernelPackages = pkgs.linuxPackages_latest;
 
     loader = {

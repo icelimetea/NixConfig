@@ -9,4 +9,8 @@
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+
+  cpu.intel.updateMicrocode = true;
+
+  boot.initrd.luks.devices.osroot.device = "/dev/disk/by-uuid/3935fccc-b56d-4c41-84f4-0cbac07aca09";
 }

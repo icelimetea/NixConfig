@@ -1,7 +1,5 @@
 { pkgs, lib, nixpkgs, ... }:
-let
-  isIntel = true;
-in {
+{
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam"
     "steam-original"
@@ -19,9 +17,6 @@ in {
     };
 
     enableRedistributableFirmware = true;
-
-    cpu.intel.updateMicrocode = isIntel;
-    cpu.amd.updateMicrocode = !isIntel;
   };
 
   virtualisation.libvirtd = {
@@ -88,9 +83,6 @@ in {
       polymc
       steam
       steam.run
-
-      # Firmware
-      (if isIntel then microcodeIntel else microcodeAmd)
 
       # System administration
       virt-manager
