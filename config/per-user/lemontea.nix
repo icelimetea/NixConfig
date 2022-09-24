@@ -1,4 +1,4 @@
-{ config, pkgs, lib, home, ... }: (rec {
+{ config, pkgs, lib, home, ... } @ args: (rec {
   home = {
     sessionPath = [ "$HOME/.emacs.d/bin" ];
 
@@ -36,12 +36,12 @@
       github = {
         host = "github.com";
 
-        identityFile = [ "${home.homeDirectory}/.ssh/id_github" ];
+        identityFile = [ "${args.home.homeDirectory}/.ssh/id_github" ];
       };
       gitlab = {
         host = "gitlab.com";
 
-        identityFile = [ "${home.homeDirectory}/.ssh/id_gitlab" ];
+        identityFile = [ "${args.home.homeDirectory}/.ssh/id_gitlab" ];
       };
     };
   };
