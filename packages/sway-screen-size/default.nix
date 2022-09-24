@@ -5,10 +5,16 @@ stdenv.mkDerivation (rec {
 
   src = ./sway-screen-size;
 
-  builder = pkgs.writeScript "builder.sh" ''
-    ${pkgs.coreutils}/bin/mkdir -p $out/bin/
+  dontBuild = true;
 
-    ${pkgs.coreutils}/bin/cp ${src} $out/bin/sway-screen-size
-    ${pkgs.coreutils}/bin/chmod 755 $out/bin/sway-screen-size
+  installPhase = ''
+    runHook preInstall
+
+    mkdir -p $out/bin/
+
+    cp ${src} $out/bin/sway-screen-size
+    chmod 755 $out/bin/sway-screen-size
+
+    runHook postInstall
   '';
 })
