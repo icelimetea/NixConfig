@@ -44,5 +44,6 @@
 
 						     	   home.stateVersion = stateVersion;
 						         };
-						       in baseCfg // (import (../config/per-user + "/${userName}.nix") (baseCfg // cfgArgs));
+							 definedCfg = import (../config/per-user + "/${userName}.nix") (nixpkgs.lib.attrsets.recursiveUpdate baseCfg cfgArgs);
+						       in nixpkgs.lib.attrsets.recursiveUpdate baseCfg definedCfg;
 }
