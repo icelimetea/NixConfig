@@ -9,10 +9,10 @@
     '';
 
     file = {
-      '.doom.d/init.el'.source = ./emacs/init.el;
-      '.doom.d/packages.el'.source = ./emacs/packages.el;
+      ".doom.d/init.el".source = ./emacs/init.el;
+      ".doom.d/packages.el".source = ./emacs/packages.el;
       
-      '.doom.d/config.el'.text = ''
+      ".doom.d/config.el'.text = ''
         (setq user-full-name "${programs.git.userName}"
 	      user-mail-address "${programs.git.userEmail}"
 	      doom-theme 'doom-one
