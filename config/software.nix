@@ -12,8 +12,6 @@
 
       driSupport = true;
       driSupport32Bit = true;
-
-      extraPackages = (if isIntel then [ pkgs.intel-media-driver ] else [ ]);
     };
 
     enableRedistributableFirmware = true;
