@@ -1,11 +1,11 @@
-{ config, pkgs, lib, ... } @ args:
-let
-  doomEmacsCfg = import ./emacs/config.nix;
-in (rec {
+{ config, pkgs, lib, ... } @ args: rec {
   home = {
     sessionPath = [ "$HOME/.emacs.d/bin" ];
 
-    file.".doom.d".source = "${pkgs.callPackage doomEmacsCfg { inherit (programs.git) userName userEmail; }}";
+    file = {
+      ".doom.d".source = "${pkgs.callPackage ./emacs/config.nix { inherit (programs.git) userName userEmail; }}";
+      ".emacs.d".source = "${pkgs.callPackage ./emacs/doomemacs.nix {}}";
+    };
   };
 
   programs.git = {
@@ -31,4 +31,4 @@ in (rec {
       };
     };
   };
-})
+}

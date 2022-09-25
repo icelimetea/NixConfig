@@ -1,0 +1,9 @@
+{ stdenv, fetchFromGitHub, ... }:
+stdenv.mkDerivation {
+  pname = "doomemacs";
+
+  src = fetchFromGitHub {
+    owner = "doomemacs";
+    repo = "doomemacs";
+  };
+}
