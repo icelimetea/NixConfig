@@ -1,4 +1,4 @@
-{ config, pkgs, lib, stdenv, ... } @ args:
+{ config, pkgs, lib, ... } @ args:
 let
   emacsCfg = { userName, userEmail, stdenv, ... }: stdenv.mkDerivation (rec {
     name = "emacs-cfg";
