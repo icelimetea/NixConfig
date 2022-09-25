@@ -1,6 +1,6 @@
 { config, pkgs, lib, stdenv, ... } @ args:
 let
-  emacsCfg = userName: userEmail: stdenv.mkDerivation (rec {
+  emacsCfg = { userName, userEmail, stdenv, ... }: stdenv.mkDerivation (rec {
     name = "emacs-cfg";
 
     src = ./emacs;
@@ -27,7 +27,7 @@ in (rec {
   home = {
     sessionPath = [ "$HOME/.emacs.d/bin" ];
 
-    home.file.".doom.d".source = "${emacsCfg programs.git.userName programs.git.userEmail}";
+    home.file.".doom.d".source = "${pkgs.callPackage emacsCfg { inherit (programs.git) userName userEmail; }}";
   };
 
   programs.git = {
