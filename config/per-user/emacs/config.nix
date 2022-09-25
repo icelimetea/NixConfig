@@ -9,15 +9,12 @@ stdenv.mkDerivation (rec {
   installPhase = ''
     runHook preInstall
 
-    cp -r --no-preserve=mode,ownership ${src} $out
+    mkdir $out
 
-    tee $out/config.el <<EOC
-    (setq user-full-name "${userName}"
-	      user-mail-address "${userEmail}"
-	      doom-theme 'doom-one
-	      display-line-numbers-type t
-	      org-directory "~/org/")
-    EOC
+    cp ${src}/init.el $out/init.el
+    cp ${src}/packages.el $out/packages.el
+
+    sed 's/\$USER_NAME/${userName}/;s/\$USER_EMAIL/${userEmail}/' ${src}/config.el > $out/config.el
     
     runHook postInstall
   '';
