@@ -12,7 +12,7 @@ let
 
     cp -r ${src} $out
 
-    tee $out/config.el <<<EOF
+    tee $out/config.el <<EOF
     (setq user-full-name "${userName}"
 	      user-mail-address "${userEmail}"
 	      doom-theme 'doom-one
