@@ -14,7 +14,7 @@ stdenv.mkDerivation (rec {
     cp ${src}/init.el $out/init.el
     cp ${src}/packages.el $out/packages.el
 
-    sed 's/\$USER_NAME/${userName}/;s/\$USER_EMAIL/${userEmail}/' ${src}/config.el > $out/config.el
+    sed 's/\$USER_NAME/"${userName}"/;s/\$USER_EMAIL/"${userEmail}"/' ${src}/config.el > $out/config.el
     
     runHook postInstall
   '';
