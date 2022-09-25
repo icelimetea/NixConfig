@@ -6,12 +6,12 @@ in {
     enable = lib.mkEnableOption "Doom Emacs";
 
     userName = lib.mkOption {
-      type = lib.types.string;
+      type = lib.types.str;
       description = "Username used to identify you in GPG, Git, etc...";
     };
 
     userEmail = lib.mkOption {
-      type = lib.types.string;
+      type = lib.types.str;
       description = "Email used to identify you in GPG, Git, etc...";
     };
   };
