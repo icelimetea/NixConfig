@@ -11,30 +11,29 @@
 
   outputs = { self, nixpkgs, home-manager }: {
 
-    nixosConfigurations =
-    	let
-	  configLib = import ./utils/lib.nix {
-	    inherit nixpkgs;
-	    inherit home-manager;
-	  };
-	in configLib.mkConfig {
-	  "lime-pc" = {
-	    stateVersion = "22.05";
-	    systemKind = "x86_64-linux";
-	    users = { "lemontea" = [ "wheel" ]; };
+    nixosConfigurations = let
+      configLib = import ./utils/lib.nix {
+        inherit nixpkgs;
+        inherit home-manager;
+      };
+    in configLib.mkConfig {
+      "lime-pc" = {
+        stateVersion = "22.05";
+        systemKind = "x86_64-linux";
+        users = { "lemontea" = [ "wheel" ]; };
         hmModules = [ ./modules/doomemacs ];
-	    systemModules = [
-	      ({ nixpkgs, ... } : {
-	        nixpkgs.overlays = [
-		  (final: prev: { sway-screen-size = prev.callPackage ./packages/sway-screen-size {}; })
-		];
-	      })
-	      ./config/desktop.nix
-	      ./config/software.nix
-	      ./config/misc.nix
-	      ./config/hardware-configuration.nix
+        systemModules = [
+          ({ nixpkgs, ... } : {
+            nixpkgs.overlays = [
+              (final: prev: { sway-screen-size = prev.callPackage ./packages/sway-screen-size {}; })
             ];
-	  };
-        };
+          })
+          ./config/desktop.nix
+          ./config/software.nix
+          ./config/misc.nix
+          ./config/hardware-configuration.nix
+        ];
+      };
+    };
   };
 }
