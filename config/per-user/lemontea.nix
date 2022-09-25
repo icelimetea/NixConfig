@@ -9,8 +9,6 @@
          rm -r $HOME/.emacs.d
 
          git clone 'https://github.com/doomemacs/doomemacs.git' $HOME/.emacs.d
-
-         $HOME/.emacs.d/bin/doom install --force
       fi
     '';
 
