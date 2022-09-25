@@ -22,6 +22,7 @@
 	    stateVersion = "22.05";
 	    systemKind = "x86_64-linux";
 	    users = { "lemontea" = [ "wheel" ]; };
+        hmModules = [ ./modules/doomemacs ];
 	    systemModules = [
 	      ({ nixpkgs, ... } : {
 	        nixpkgs.overlays = [

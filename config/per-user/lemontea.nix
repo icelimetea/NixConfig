@@ -1,12 +1,4 @@
-{ config, pkgs, lib, ... } @ args: rec {
-  home = {
-    sessionPath = [ "$HOME/.emacs.d/bin" ];
-
-    activation.configureEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] "sh ${./emacs/install-doom.sh} &";
-
-    file.".doom.d".source = "${pkgs.callPackage ./emacs/config.nix { inherit (programs.git) userName userEmail; }}";
-  };
-
+{ config, pkgs, lib, ... }: rec {
   programs.git = {
     enable = true;
     
@@ -21,12 +13,12 @@
       github = {
         host = "github.com";
 
-        identityFile = [ "${args.home.homeDirectory}/.ssh/id_github" ];
+        identityFile = [ "${home.homeDirectory}/.ssh/id_github" ];
       };
       gitlab = {
         host = "gitlab.com";
 
-        identityFile = [ "${args.home.homeDirectory}/.ssh/id_gitlab" ];
+        identityFile = [ "${home.homeDirectory}/.ssh/id_gitlab" ];
       };
     };
   };

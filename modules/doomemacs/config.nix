@@ -2,7 +2,7 @@
 stdenv.mkDerivation (rec {
   name = "emacs-cfg";
 
-  src = ./.;
+  src = ./elisp;
 
   dontBuild = true;
 
