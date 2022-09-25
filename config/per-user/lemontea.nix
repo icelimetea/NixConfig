@@ -5,7 +5,7 @@
     file = {
       ".doom.d" = {
         source = ./emacs;
-	recursive = true;
+	recursive = false;
       };
 
       ".doom.d/config.el".text = ''
