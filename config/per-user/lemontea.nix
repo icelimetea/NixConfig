@@ -1,33 +1,11 @@
 { config, pkgs, lib, ... } @ args:
 let
-  emacsCfg = { userName, userEmail, stdenv, ... }: stdenv.mkDerivation (rec {
-    name = "emacs-cfg";
-
-    src = ./emacs;
-
-    dontBuild = true;
-
-    installPhase = ''
-    runHook preInstall
-
-    cp -r --no-preserve=mode,ownership ${src} $out
-
-    tee > $out/config.el <<EOC
-    (setq user-full-name "${userName}"
-	      user-mail-address "${userEmail}"
-	      doom-theme 'doom-one
-	      display-line-numbers-type t
-	      org-directory "~/org/")
-    EOC
-    
-    runHook postInstall
-    '';
-  });
+  doomEmacsCfg = import ./emacs/config.nix;
 in (rec {
   home = {
     sessionPath = [ "$HOME/.emacs.d/bin" ];
 
-    file.".doom.d".source = "${pkgs.callPackage emacsCfg { inherit (programs.git) userName userEmail; }}";
+    file.".doom.d".source = "${pkgs.callPackage doomEmacsCfg { inherit (programs.git) userName userEmail; }}";
   };
 
   programs.git = {
