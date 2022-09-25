@@ -9,8 +9,10 @@
     '';
 
     file = {
-      ".doom.d/init.el".source = ./emacs/init.el;
-      ".doom.d/packages.el".source = ./emacs/packages.el;
+      ".doom.d" = {
+        source = ./emacs;
+	recursive = true;
+      };
 
       ".doom.d/config.el".text = ''
         (setq user-full-name "${programs.git.userName}"
