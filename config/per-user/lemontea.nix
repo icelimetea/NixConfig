@@ -27,7 +27,7 @@ in (rec {
   home = {
     sessionPath = [ "$HOME/.emacs.d/bin" ];
 
-    home.file.".doom.d".source = "${pkgs.callPackage emacsCfg { inherit (programs.git) userName userEmail; }}";
+    file.".doom.d".source = "${pkgs.callPackage emacsCfg { inherit (programs.git) userName userEmail; }}";
   };
 
   programs.git = {
