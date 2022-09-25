@@ -2,7 +2,7 @@
 stdenv.mkDerivation (rec {
   name = "emacs-cfg";
 
-  src = ./emacs;
+  src = ./.;
 
   dontBuild = true;
 
