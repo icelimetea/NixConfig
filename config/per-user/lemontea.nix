@@ -1,19 +1,34 @@
-{ config, pkgs, lib, home, ... } @ args: (rec {
-  home = {
-    sessionPath = [ "$HOME/.emacs.d/bin" ];
+{ config, pkgs, lib, stdenv, ... } @ args:
+let
+  emacsCfg = userName: userEmail: stdenv.mkDerivation {
+    name = "emacs-cfg";
 
-    file = {
-      ".doom.d/init.el".source = ./emacs/init.el;
-      ".doom.d/packages.el".source = ./emacs/packages.el;
+    src = ./emacs;
 
-      ".doom.d/config.el".text = ''
-        (setq user-full-name "${programs.git.userName}"
-	      user-mail-address "${programs.git.userEmail}"
+    dontBuild = true;
+
+    installPhase = ''
+    runHook preInstall
+
+    cp -r ${src} $out
+
+    tee $out/config.el <<<EOF
+    (setq user-full-name "${userName}"
+	      user-mail-address "${userEmail}"
 	      doom-theme 'doom-one
 	      display-line-numbers-type t
 	      org-directory "~/org/")
-      '';
-    };
+    EOF
+    
+    runHook postInstall
+    '';
+  };
+in (rec {
+  home = {
+    sessionPath = [ "$HOME/.emacs.d/bin" ];
+
+    home.file.".doom.d".source = emacsCfg programs.git.userName
+    			       	 	  programs.git.userEmail;
   };
 
   programs.git = {
