@@ -9,11 +9,11 @@ stdenv.mkDerivation (rec {
 
   dontBuild = true;
 
-  installPhase = {
+  installPhase = ''
     runHook preInstall
 
     cp -r --no-preserve=mode,ownership ${src} $out
 
     runHook postInstall
-  };
+  '';
 })
