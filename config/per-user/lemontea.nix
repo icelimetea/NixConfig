@@ -1,6 +1,6 @@
 { config, pkgs, lib, stdenv, ... } @ args:
 let
-  emacsCfg = userName: userEmail: stdenv.mkDerivation {
+  emacsCfg = userName: userEmail: stdenv.mkDerivation (rec {
     name = "emacs-cfg";
 
     src = ./emacs;
@@ -22,13 +22,12 @@ let
     
     runHook postInstall
     '';
-  };
+  });
 in (rec {
   home = {
     sessionPath = [ "$HOME/.emacs.d/bin" ];
 
-    home.file.".doom.d".source = emacsCfg programs.git.userName
-    			       	 	  programs.git.userEmail;
+    home.file.".doom.d".source = "${emacsCfg programs.git.userName programs.git.userEmail}";
   };
 
   programs.git = {
