@@ -10,15 +10,15 @@ let
     installPhase = ''
     runHook preInstall
 
-    cp -r ${src} $out
+    cp -r --no-preserve=mode,ownership ${src} $out
 
-    tee > $out/config.el <<EOF
+    tee > $out/config.el <<EOC
     (setq user-full-name "${userName}"
 	      user-mail-address "${userEmail}"
 	      doom-theme 'doom-one
 	      display-line-numbers-type t
 	      org-directory "~/org/")
-    EOF
+    EOC
     
     runHook postInstall
     '';
