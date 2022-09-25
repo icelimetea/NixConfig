@@ -2,10 +2,10 @@
   home = {
     sessionPath = [ "$HOME/.emacs.d/bin" ];
 
-    activation.configureEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      # $DRY_RUN_CMD git clone 'https://github.com/doomemacs/doomemacs.git' $HOME/.emacs.d
+    activation.configureEmacs = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+      $DRY_RUN_CMD git clone 'https://github.com/doomemacs/doomemacs.git' $HOME/.emacs.d
 
-      # $DRY_RUN_CMD $HOME/.emacs.d/bin/doom sync
+      $DRY_RUN_CMD $HOME/.emacs.d/bin/doom sync
     '';
 
     file = {
