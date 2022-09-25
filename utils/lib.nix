@@ -37,13 +37,13 @@
 
   _mkDefaultUserCfg = userName:
   		      stateVersion:
-		      cfgArgs: let
-			    			         baseCfg = {
-			      			     	   home.username = userName;
-			      			     	   home.homeDirectory = "/home/${userName}";
+		      { config, pkgs, lib, stdenv, ... } @ cfgArgs: let
+								      baseCfg = {
+			      			     	                home.username = userName;
+			      			     	   	        home.homeDirectory = "/home/${userName}";
 
-						     	   home.stateVersion = stateVersion;
-						         };
-							 definedCfg = import (../config/per-user + "/${userName}.nix") (nixpkgs.lib.attrsets.recursiveUpdate baseCfg cfgArgs);
-						       in nixpkgs.lib.attrsets.recursiveUpdate baseCfg definedCfg;
+						     	   	        home.stateVersion = stateVersion;
+						         	      };
+							 	      definedCfg = import (../config/per-user + "/${userName}.nix") (nixpkgs.lib.attrsets.recursiveUpdate baseCfg cfgArgs);
+						       		    in nixpkgs.lib.attrsets.recursiveUpdate baseCfg definedCfg;
 }
