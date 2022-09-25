@@ -37,7 +37,7 @@
 
   _mkDefaultUserCfg = userName:
   		      stateVersion:
-		      { config, pkgs, lib, ... } @ cfgArgs: let
+		      cfgArgs: let
 			    			         baseCfg = {
 			      			     	   home.username = userName;
 			      			     	   home.homeDirectory = "/home/${userName}";
