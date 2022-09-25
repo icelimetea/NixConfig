@@ -103,6 +103,7 @@
       libreoffice-fresh
       thunderbird
       file
+      ripgrep
       bc
     ];
 
