@@ -2,7 +2,7 @@
   home = {
     sessionPath = [ "$HOME/.emacs.d/bin" ];
 
-    home.activation.configureEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    activation.configureEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       if [[ ! -a $HOME/.emacs.d/.doomrc ]]; then
          until ping -c 1 'github.com' >/dev/null 2>&1; do :; done
 
