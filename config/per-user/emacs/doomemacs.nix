@@ -5,6 +5,7 @@ stdenv.mkDerivation (rec {
   src = fetchFromGitHub {
     owner = "doomemacs";
     repo = "doomemacs";
+    rev = "731764ae7134f6ce857147f7ef067c6ce3f23abd";
   };
 
   dontBuild = true;
