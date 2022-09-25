@@ -2,6 +2,18 @@
   home = {
     sessionPath = [ "$HOME/.emacs.d/bin" ];
 
+    home.activation.configureEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      if [[ ! -a $HOME/.emacs.d/.doomrc ]]; then
+         until ping -c 1 'github.com' >/dev/null 2>&1; do :; done
+
+         rm -r $HOME/.emacs.d
+
+         git clone 'https://github.com/doomemacs/doomemacs.git' $HOME/.emacs.d
+
+         $HOME/.emacs.d/bin/doom install --force
+      fi
+    '';
+
     file.".doom.d".source = "${pkgs.callPackage ./emacs/config.nix { inherit (programs.git) userName userEmail; }}";
   };
 
