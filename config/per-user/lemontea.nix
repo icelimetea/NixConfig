@@ -6,6 +6,12 @@
     userEmail = "fr3shtea@outlook.com";
   };
 
+  programs.doomemacs = {
+    enable = true;
+
+    inherit (programs.git) userName userEmail;
+  };
+
   programs.ssh = {
     enable = true;
 
