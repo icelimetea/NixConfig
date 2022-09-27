@@ -31,7 +31,7 @@
         home-manager.sharedModules = hmModules;
 
         home-manager.users = builtins.mapAttrs
-                                        (userName: userGroups: [ _mkDefaultUserCfg userName stateVersion ])
+                                        (userName: userGroups: _mkDefaultUserCfg userName stateVersion)
                                         users;
       })
     ];
