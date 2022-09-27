@@ -37,15 +37,14 @@
     ];
   };
 
-  _mkDefaultUserCfg = userName:
+  _mkDefaultUserCfg = username:
                       stateVersion: { config, pkgs, lib, ... } @ cfgArgs:
                       let
                         baseCfg.home = {
-                          inherit userName;
-                          inherit stateVersion;
+                          inherit username stateVersion;
 
-                          homeDirectory = "/home/${userName}";
+                          homeDirectory = "/home/${username}";
                         };
-                        definedCfg = import (../config/per-user + "/${userName}.nix") (nixpkgs.lib.attrsets.recursiveUpdate baseCfg.home cfgArgs);
+                        definedCfg = import (../config/per-user + "/${username}.nix") (nixpkgs.lib.attrsets.recursiveUpdate baseCfg.home cfgArgs);
                       in nixpkgs.lib.attrsets.recursiveUpdate baseCfg definedCfg;
 }
