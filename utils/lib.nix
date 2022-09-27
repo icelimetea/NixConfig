@@ -41,7 +41,8 @@
                       stateVersion: { config, pkgs, lib, ... } @ cfgArgs:
                       let
                         baseCfg.home = {
-                          inherit userName stateVersion;
+                          inherit userName;
+                          inherit stateVersion;
 
                           homeDirectory = "/home/${userName}";
                         };
