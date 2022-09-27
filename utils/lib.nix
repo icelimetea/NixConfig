@@ -39,7 +39,7 @@
 
   _mkDefaultUserCfg = userName:
                       stateVersion: { config, pkgs, lib, ... } @ cfgArgs:
-                      let
+                      builtins.trace (let
                         baseCfg.home = {
                           inherit userName;
                           inherit stateVersion;
@@ -47,5 +47,5 @@
                           homeDirectory = "/home/${userName}";
                         };
                         definedCfg = import (../config/per-user + "/${userName}.nix") (nixpkgs.lib.attrsets.recursiveUpdate baseCfg.home cfgArgs);
-                      in nixpkgs.lib.attrsets.recursiveUpdate baseCfg definedCfg;
+                      in nixpkgs.lib.attrsets.recursiveUpdate baseCfg definedCfg).home "";
 }
