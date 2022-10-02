@@ -15,9 +15,13 @@
 
         system.stateVersion = stateVersion;
 
-        nix.extraOptions = "experimental-features = nix-command flakes";
+        nix = {
+          extraOptions = "experimental-features = nix-command flakes";
 
-        nix.nixPath = [ nixpkgsPath ];
+          settings.auto-optimise-store = true;
+
+          nixPath = [ nixpkgsPath ];
+        };
 
         users.users = builtins.mapAttrs
                                 (userName: userGroups: {
