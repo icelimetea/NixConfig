@@ -97,6 +97,7 @@
       wireguard-tools
 
       # Desktop apps & utilities
+      cloudflare-warp
       bitcoin
       monero-gui
       alsa-utils
