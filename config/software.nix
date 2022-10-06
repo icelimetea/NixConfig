@@ -4,7 +4,6 @@
     "steam"
     "steam-original"
     "steam-runtime"
-    "cloudflare-warp"
   ];
 
   hardware = {
@@ -98,7 +97,6 @@
       wireguard-tools
 
       # Desktop apps & utilities
-      cloudflare-warp
       bitcoin
       monero-gui
       alsa-utils
