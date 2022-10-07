@@ -42,7 +42,6 @@
     java.enable = true;
     git.enable = true;
     wireshark.enable = true;
-    npm.enable = true;
   };
 
   environment = {
