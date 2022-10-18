@@ -80,7 +80,6 @@
       ffmpeg
 
       # Games
-      polymc
       steam
       steam.run
 
