@@ -43,7 +43,7 @@
     java = {
       enable = true;
 
-      packages = pkgs.jdk18;
+      package = pkgs.jdk18;
     };
 
     git.enable = true;
