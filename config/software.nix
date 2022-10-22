@@ -40,7 +40,12 @@
       agentTimeout = "5m";
     };
 
-    java.enable = true;
+    java = {
+      enable = true;
+
+      packages = pkgs.jdk18;
+    };
+
     git.enable = true;
     wireshark.enable = true;
     npm.enable = true;
