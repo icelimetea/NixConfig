@@ -80,6 +80,7 @@
       ffmpeg
 
       # Games
+      prismlauncher
       steam
       steam.run
 
