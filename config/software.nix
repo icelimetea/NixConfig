@@ -67,7 +67,6 @@
       virtualenv
       emacs
       jetbrains.idea-community
-      jetbrains.pycharm-community
       maven
 
       # Browsers
@@ -105,11 +104,11 @@
 
       # Desktop apps & utilities
       bitcoin
-      monero-gui
       alsa-utils
       libreoffice-fresh
       thunderbird
       file
+      fd
       ripgrep
       bc
     ];
