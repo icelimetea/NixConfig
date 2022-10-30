@@ -100,6 +100,7 @@
       libva-utils
       openssh
       openssl
+      wireshark
       wireguard-tools
 
       # Desktop apps & utilities
