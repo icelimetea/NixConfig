@@ -104,14 +104,13 @@
       wireguard-tools
 
       # Desktop apps & utilities
-      bitcoin
+      electrum
       alsa-utils
       libreoffice-fresh
       thunderbird
       file
       fd
       ripgrep
-      bc
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
