@@ -59,7 +59,7 @@
       useLocalResolver = true;
     };
 
-    allowedUDPPorts = [
+    firewall.allowedUDPPorts = [
       51820 51821 # WireGuard
     ];
 
