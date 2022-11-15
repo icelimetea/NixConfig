@@ -59,10 +59,6 @@
       useLocalResolver = true;
     };
 
-    firewall.allowedUDPPorts = [
-      51820 51821 # WireGuard
-    ];
-
     dhcpcd.enable = false;
   };
 
