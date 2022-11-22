@@ -29,12 +29,6 @@
         swtpm.enable = true;
       };
     };
-
-    kvmgt = {
-      enable = true;
-
-      vgpus = {};
-    };
   };
 
   programs = {
@@ -113,7 +107,6 @@
 
       # Desktop apps & utilities
       electrum
-      looking-glass-client
       alsa-utils
       libreoffice-fresh
       thunderbird
