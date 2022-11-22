@@ -27,15 +27,10 @@
     fsType = "vfat";
   };
 
-  fileSystems."/" = {
-    device = "/dev/root-group/root-vol";
-    fsType = "ext4";
-  };
+  fileSystems."/".device = "/dev/root-group/root-vol";
 
   swapDevices = [
-    {
-      device = "/dev/root-group/swap-vol";
-    }
+    { device = "/dev/root-group/swap-vol"; }
   ];
 
   powerManagement.cpuFreqGovernor = "performance";
