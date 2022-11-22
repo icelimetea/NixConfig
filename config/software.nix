@@ -18,14 +18,16 @@
     enableRedistributableFirmware = true;
   };
 
-  virtualisation.libvirtd = {
-    enable = true;
+  virtualisation = {
+    libvirtd = {
+      enable = true;
 
-    qemu = {
-      package = pkgs.qemu_kvm;
+      qemu = {
+        package = pkgs.qemu_kvm;
 
-      ovmf.enable = true;
-      swtpm.enable = true;
+        ovmf.enable = true;
+        swtpm.enable = true;
+      };
     };
 
     kvmgt = {
