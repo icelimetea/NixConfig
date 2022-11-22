@@ -27,6 +27,12 @@
       ovmf.enable = true;
       swtpm.enable = true;
     };
+
+    kvmgt = {
+      enable = true;
+
+      vgpus = {};
+    };
   };
 
   programs = {
