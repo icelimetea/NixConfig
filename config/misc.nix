@@ -1,5 +1,8 @@
 { config, pkgs, nixpkgs, ... }: {
   boot = {
+    tmpOnTmpfs = true;
+    tmpOnTmpfsSize = 12;
+
     kernelPackages = pkgs.linuxPackages_latest;
 
     loader = {
@@ -27,7 +30,12 @@
     fsType = "vfat";
   };
 
-  fileSystems."/".device = "/dev/root-group/root-vol";
+  fileSystems."/" = {
+    device = "/dev/root-group/root-vol";
+
+    fsType = "btrfs";
+    options = "compress-force=zstd:9";
+  };
 
   swapDevices = [
     { device = "/dev/root-group/swap-vol"; }
