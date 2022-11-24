@@ -1,7 +1,6 @@
 { config, pkgs, nixpkgs, ... }: {
   boot = {
-    tmpOnTmpfs = true;
-    tmpOnTmpfsSize = 12;
+    cleanTmpDir = true;
 
     kernelPackages = pkgs.linuxPackages_latest;
 
@@ -34,7 +33,7 @@
     device = "/dev/root-group/root-vol";
 
     fsType = "btrfs";
-    options = "compress-force=zstd:15";
+    options = [ "compress-force=zstd:15" ];
   };
 
   swapDevices = [
