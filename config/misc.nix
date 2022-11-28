@@ -33,7 +33,10 @@
     device = "/dev/root-group/root-vol";
 
     fsType = "btrfs";
-    options = [ "compress-force=zstd:15" ];
+    options = [
+      "compress-force=zstd:15"
+      "noatime"
+    ];
   };
 
   swapDevices = [
