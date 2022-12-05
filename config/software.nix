@@ -106,7 +106,8 @@
       wireguard-tools
 
       # Desktop apps & utilities
-      electrum
+      bitcoin
+      monero-gui
       alsa-utils
       libreoffice-fresh
       thunderbird
