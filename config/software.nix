@@ -86,6 +86,7 @@
       ffmpeg
 
       # Games
+      osu-lazer
       prismlauncher
       steam
       steam.run
