@@ -15,7 +15,7 @@
     pipewire = {
       enable = true;
 
-      alsa.enable = false;
+      alsa.enable = true;
       pulse.enable = true;
 
       wireplumber.enable = true;
