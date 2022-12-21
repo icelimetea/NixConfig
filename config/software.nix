@@ -106,6 +106,7 @@
       openssl
       wireshark
       wireguard-tools
+      piper
 
       # Desktop apps & utilities
       bitcoin

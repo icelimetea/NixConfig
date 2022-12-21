@@ -12,6 +12,8 @@
   services = {
     upower.enable = true;
 
+    ratbagd.enable = true;
+
     pipewire = {
       enable = true;
 
