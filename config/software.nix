@@ -5,7 +5,6 @@
     "steam-original"
     "steam-runtime"
     "steam-run"
-    "osu-lazer"
   ];
 
   hardware = {
@@ -87,7 +86,6 @@
       ffmpeg
 
       # Games
-      osu-lazer
       prismlauncher
       steam
       steam.run
