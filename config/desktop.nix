@@ -14,6 +14,8 @@
 
     ratbagd.enable = true;
 
+    geoclue2.enable = true;
+
     pipewire = {
       enable = true;
 
