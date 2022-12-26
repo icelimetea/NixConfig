@@ -35,19 +35,10 @@
     ssh = {
       startAgent = true;
 
-      askPassword = "${pkgs.ksshaskpass}/bin/ksshaskpass";
-
-      enableAskPassword = true;
-
       agentTimeout = "5m";
     };
 
-    java = {
-      enable = true;
-
-      # package = pkgs.jdk18;
-    };
-
+    java.enable = true;
     git.enable = true;
     wireshark.enable = true;
     npm.enable = true;
