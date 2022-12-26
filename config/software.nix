@@ -104,11 +104,12 @@
       openssl
       wireshark
       wireguard-tools
-      piper
 
       # Desktop apps & utilities
       bitcoin
       monero-gui
+      piper
+      gnome.gnome-tweaks
       alsa-utils
       libreoffice-fresh
       thunderbird
