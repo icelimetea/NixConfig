@@ -29,9 +29,13 @@
       layout = "us,ru";
       xkbOptions = "grp:caps_toggle";
 
-      displayManager.sddm.enable = true;
-    
-      desktopManager.plasma5.enable = true;
+      displayManager.gdm = {
+        enable = true;
+
+        wayland = true;
+      };
+
+      desktopManager.gnome.enable = true;
     };
   };
 
