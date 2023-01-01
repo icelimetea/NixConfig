@@ -108,6 +108,7 @@
       fd
       ripgrep
       brotli
+      brotli.lib
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
