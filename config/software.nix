@@ -107,8 +107,7 @@
       file
       fd
       ripgrep
-      brotli
-      brotli.lib
+      eclipses.eclipse-java
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
