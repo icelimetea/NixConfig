@@ -107,7 +107,6 @@
       file
       fd
       ripgrep
-      eclipses.eclipse-java
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
