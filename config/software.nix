@@ -60,6 +60,7 @@
       virtualenv
       emacs
       jetbrains.idea-community
+      jetbrains.pycharm-community
       maven
 
       # Browsers
