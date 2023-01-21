@@ -1,9 +1,13 @@
-{ nixpkgs, home-manager }: rec {
-  mkConfig = hostCfgs: builtins.mapAttrs
-				(hostName: cfg: _mkHostConfig (cfg // { inherit hostName; }))
-				hostCfgs;
+{ nixpkgs, home-manager }:
+let
+  configDir = ../config;
+in rec {
+  mkConfig = systemModules: hostCfgs:
+    builtins.mapAttrs
+      (hostName: cfg: _mkHostConfig (cfg // { inherit hostName systemModules; }))
+      hostCfgs;
 
-  _mkHostConfig = { hostName, systemKind, users, systemModules, hmModules, stateVersion }: nixpkgs.lib.nixosSystem {
+  _mkHostConfig = { hostName, systemKind, users, systemModules, stateVersion }: nixpkgs.lib.nixosSystem {
     system = systemKind;
 
     modules = systemModules ++ [
@@ -18,8 +22,6 @@
         nix = {
           extraOptions = "experimental-features = nix-command flakes";
 
-          settings.auto-optimise-store = true;
-
           nixPath = [ nixpkgsPath ];
         };
 
@@ -30,25 +32,24 @@
                                 })
                                 users;
 
-        home-manager.useGlobalPkgs = true;
-
-        home-manager.sharedModules = hmModules;
-
         home-manager.users = builtins.mapAttrs
                                         (userName: userGroups: _mkDefaultUserCfg userName stateVersion)
                                         users;
       })
+      (configDir + "/per-machine/${hostName}.nix")
     ];
   };
 
   _mkDefaultUserCfg = username:
                       stateVersion: { config, pkgs, lib, ... } @ cfgArgs:
                       let
-                        baseCfg.home = {
-                          inherit username stateVersion;
+                        baseCfg = {
+                          home = {
+                            inherit username stateVersion;
 
-                          homeDirectory = "/home/${username}";
+                            homeDirectory = "/home/${username}";
+                          };
                         };
-                        definedCfg = import (../config/per-user + "/${username}.nix") (nixpkgs.lib.attrsets.recursiveUpdate baseCfg.home cfgArgs);
+                        definedCfg = import (configDir + "/per-user/${username}.nix") (nixpkgs.lib.attrsets.recursiveUpdate ({ injected = baseCfg; }) cfgArgs);
                       in nixpkgs.lib.attrsets.recursiveUpdate baseCfg definedCfg;
 }

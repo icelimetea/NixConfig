@@ -1,4 +1,4 @@
-{ config, pkgs, lib, homeDirectory, ... }: rec {
+{ config, pkgs, lib, injected, ... }: rec {
   programs.git = {
     enable = true;
     
@@ -19,12 +19,12 @@
       github = {
         host = "github.com";
 
-        identityFile = [ "${homeDirectory}/.ssh/id_github" ];
+        identityFile = [ "${injected.home.homeDirectory}/.ssh/id_github" ];
       };
       gitlab = {
         host = "gitlab.com";
 
-        identityFile = [ "${homeDirectory}/.ssh/id_gitlab" ];
+        identityFile = [ "${injected.home.homeDirectory}/.ssh/id_gitlab" ];
       };
     };
   };

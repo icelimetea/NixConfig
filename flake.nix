@@ -16,24 +16,17 @@
         inherit nixpkgs;
         inherit home-manager;
       };
-    in configLib.mkConfig {
+    in configLib.mkConfig ([
+          ./config/packages.nix
+          ./config/desktop.nix
+          ./config/software.nix
+          ./config/misc.nix
+    ]) ({
       "lime-pc" = {
         stateVersion = "22.05";
         systemKind = "x86_64-linux";
         users = { "lemontea" = [ "wheel" ]; };
-        hmModules = [ ./modules/doomemacs ];
-        systemModules = [
-          ({ nixpkgs, ... } : {
-            nixpkgs.overlays = [
-              (final: prev: { sway-screen-size = prev.callPackage ./packages/sway-screen-size {}; })
-            ];
-          })
-          ./config/desktop.nix
-          ./config/software.nix
-          ./config/misc.nix
-          ./config/hardware-configuration.nix
-        ];
       };
-    };
+    });
   };
 }

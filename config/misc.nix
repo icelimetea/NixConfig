@@ -74,6 +74,8 @@
     keyMap = "us";
   };
 
+  nix.settings.auto-optimise-store = true;
+
   services = {
     fwupd.enable = true;
     thermald.enable = true;
