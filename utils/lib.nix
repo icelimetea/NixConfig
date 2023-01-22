@@ -7,9 +7,7 @@ let
 
     modules = systemModules ++ [
       home-manager.nixosModules.home-manager
-      (let
-        nixpkgsPath = "nixpkgs=${nixpkgs}";
-      in { nixpkgs, ... }: {
+      ({
         networking.hostName = hostName;
 
         system.stateVersion = stateVersion;
@@ -17,7 +15,7 @@ let
         nix = {
           extraOptions = "experimental-features = nix-command flakes";
 
-          nixPath = [ nixpkgsPath ];
+          nixPath = [ "nixpkgs=${nixpkgs}" ];
         };
 
         users.users = builtins.mapAttrs
