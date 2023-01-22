@@ -1,13 +1,8 @@
 { nixpkgs, home-manager }:
 let
   configDir = ../config;
-in rec {
-  mkConfig = systemModules: hostCfgs:
-    builtins.mapAttrs
-      (hostName: cfg: _mkHostConfig (cfg // { inherit hostName systemModules; }))
-      hostCfgs;
 
-  _mkHostConfig = { hostName, systemKind, users, systemModules, stateVersion }: nixpkgs.lib.nixosSystem {
+  mkHostConfig = { hostName, systemKind, users, systemModules, stateVersion }: nixpkgs.lib.nixosSystem {
     system = systemKind;
 
     modules = systemModules ++ [
@@ -33,14 +28,14 @@ in rec {
                                 users;
 
         home-manager.users = builtins.mapAttrs
-                                        (userName: userGroups: _mkDefaultUserCfg userName stateVersion)
+                                        (userName: userGroups: mkDefaultUserCfg userName stateVersion)
                                         users;
       })
       (configDir + "/per-machine/${hostName}.nix")
     ];
   };
 
-  _mkDefaultUserCfg = username:
+  mkDefaultUserCfg = username:
                       stateVersion: { config, pkgs, lib, ... } @ cfgArgs:
                       let
                         baseCfg = {
@@ -52,4 +47,10 @@ in rec {
                         };
                         definedCfg = import (configDir + "/per-user/${username}.nix") (nixpkgs.lib.attrsets.recursiveUpdate ({ injected = baseCfg; }) cfgArgs);
                       in nixpkgs.lib.attrsets.recursiveUpdate baseCfg definedCfg;
+
+in {
+  mkConfig = systemModules: hostCfgs:
+    builtins.mapAttrs
+      (hostName: cfg: mkHostConfig (cfg // { inherit hostName systemModules; }))
+      hostCfgs;
 }
