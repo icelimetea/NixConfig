@@ -7,7 +7,7 @@ let
 
     modules = systemModules ++ [
       home-manager.nixosModules.home-manager
-      ({
+      ({ config, ... }: {
         networking.hostName = hostName;
 
         system.stateVersion = stateVersion;
@@ -26,26 +26,26 @@ let
                                 users;
 
         home-manager.users = builtins.mapAttrs
-                                        (userName: userGroups: mkDefaultUserCfg userName stateVersion)
+                                        (userName: userGroups: mkDefaultUserCfg config userName stateVersion)
                                         users;
       })
       (configDir + "/per-machine/${hostName}.nix")
     ];
   };
 
-  mkDefaultUserCfg = username:
+  mkDefaultUserCfg =  config:
+                      username:
                       stateVersion: { config, pkgs, lib, ... } @ cfgArgs:
                       let
                         baseCfg = {
                           home = {
                             inherit username stateVersion;
 
-                            homeDirectory = "/home/${username}";
+                            homeDirectory = config.users.users.${username}.home;
                           };
                         };
                         definedCfg = import (configDir + "/per-user/${username}.nix") (nixpkgs.lib.attrsets.recursiveUpdate ({ injected = baseCfg; }) cfgArgs);
                       in nixpkgs.lib.attrsets.recursiveUpdate baseCfg definedCfg;
-
 in {
   mkConfig = systemModules: hostCfgs:
     builtins.mapAttrs
