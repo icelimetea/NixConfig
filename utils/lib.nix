@@ -33,18 +33,18 @@ let
     ];
   };
 
-  mkDefaultUserCfg =  config:
+  mkDefaultUserCfg =  systemConfig:
                       username:
-                      stateVersion: { config, pkgs, lib, ... } @ cfgArgs:
+                      stateVersion: { pkgs, ... } @ cfgArgs:
                       let
                         baseCfg = {
                           home = {
                             inherit username stateVersion;
 
-                            homeDirectory = config.users.users.${username}.home;
+                            homeDirectory = systemConfig.users.users.${username}.home;
                           };
                         };
-                        definedCfg = import (configDir + "/per-user/${username}.nix") (nixpkgs.lib.attrsets.recursiveUpdate ({ injected = baseCfg; }) cfgArgs);
+                        definedCfg = import (configDir + "/per-user/${username}.nix") (cfgArgs // { injected = baseCfg; });
                       in nixpkgs.lib.attrsets.recursiveUpdate baseCfg definedCfg;
 in {
   mkConfig = systemModules: hostCfgs:
