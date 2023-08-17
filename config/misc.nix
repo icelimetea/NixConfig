@@ -1,6 +1,6 @@
 { config, pkgs, nixpkgs, lib, ... }: {
   boot = {
-    cleanTmpDir = true;
+    tmp.cleanOnBoot = true;
 
     kernelPackages = pkgs.linuxPackages_latest;
 
