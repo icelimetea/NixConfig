@@ -23,7 +23,7 @@
           ./config/misc.nix
     ]) ({
       "lime-pc" = {
-        stateVersion = "22.05";
+        stateVersion = "23.05";
         systemKind = "x86_64-linux";
         users = { "lemontea" = [ "wheel" ]; };
       };

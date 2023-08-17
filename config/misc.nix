@@ -5,26 +5,15 @@
     kernelPackages = pkgs.linuxPackages_latest;
 
     loader = {
-      systemd-boot.enable = false;
+      systemd-boot.enable = true;
 
       efi = {
         canTouchEfiVariables = true;
-        efiSysMountPoint = "/efi";
-      };
-
-      grub = {
-        enable = true;
-
-        version = 2;
-        efiSupport = true;
-
-        enableCryptodisk = true;
-        device = "nodev";
       };
     };
   };
 
-  fileSystems."/efi" = {
+  fileSystems."/boot" = {
     label = "efi-part";
     fsType = "vfat";
   };
