@@ -71,6 +71,7 @@
   services = {
     fwupd.enable = true;
     thermald.enable = true;
+    avahi.enable = false;
 
     kresd = {
       enable = true;
