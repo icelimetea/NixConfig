@@ -48,7 +48,7 @@
       swaylock
       swayidle
       sway-screen-size
-      rofi
+      rofi-wayland
       alacritty
     ];
   };
