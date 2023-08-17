@@ -5,11 +5,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.3.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   description = "LimeTea's NixOS config";
 
-  outputs = { self, nixpkgs, home-manager }: {
+  outputs = { self, nixpkgs, home-manager, lanzaboote }: {
 
     nixosConfigurations = let
       configLib = import ./utils/lib.nix {
@@ -17,6 +21,7 @@
         inherit home-manager;
       };
     in configLib.mkConfig ([
+          lanzaboote.nixosModules.lanzaboote
           ./config/packages.nix
           ./config/desktop.nix
           ./config/software.nix

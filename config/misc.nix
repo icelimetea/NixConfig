@@ -1,14 +1,17 @@
-{ config, pkgs, nixpkgs, ... }: {
+{ config, pkgs, nixpkgs, lib, ... }: {
   boot = {
     cleanTmpDir = true;
 
     kernelPackages = pkgs.linuxPackages_latest;
 
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot.enable = lib.mkForce false;
 
-      efi = {
-        canTouchEfiVariables = true;
+      efi.canTouchEfiVariables = true;
+
+      lanzaboote = {
+        enable = true;
+	pkiBundle = "/etc/secureboot";
       };
     };
   };

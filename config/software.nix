@@ -96,6 +96,7 @@
       openssl
       wireshark
       wireguard-tools
+      sbctl
 
       # Desktop apps & utilities
       bitcoin
