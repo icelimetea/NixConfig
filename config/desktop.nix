@@ -10,11 +10,14 @@
   };
 
   services = {
+    postgresql.enable = true;
+    rabbitmq.enable = true;
+
     upower.enable = true;
-
     ratbagd.enable = true;
-
     geoclue2.enable = true;
+
+    epmd.listenStream = "127.0.0.1:4369";
 
     pipewire = {
       enable = true;
