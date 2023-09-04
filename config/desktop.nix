@@ -10,8 +10,8 @@
   };
 
   services = {
-    postgresql.enable = true;
-    rabbitmq.enable = false;
+    # postgresql.enable = true;
+    # rabbitmq.enable = true;
 
     upower.enable = true;
     ratbagd.enable = true;
