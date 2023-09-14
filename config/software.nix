@@ -46,7 +46,6 @@
     
     git.enable = true;
     wireshark.enable = true;
-    npm.enable = true;
   };
 
   environment = {
@@ -55,10 +54,10 @@
       python3Full
       llvmPackages_latest.llvm
       llvmPackages_latest.clang
+      clang-tools
       gcc_latest
       gdb
       nasm
-      nodejs
       rustup
 
       # Development
@@ -104,7 +103,6 @@
       sbctl
 
       # Desktop apps & utilities
-      bitcoin
       monero-gui
       piper
       gnome.gnome-tweaks
