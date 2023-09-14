@@ -5,7 +5,5 @@
 
   home-manager = {
     useGlobalPkgs = true;
-
-    sharedModules = [ ../modules/doomemacs ];
   };
 }
