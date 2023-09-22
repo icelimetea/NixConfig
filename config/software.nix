@@ -80,6 +80,7 @@
       gimp
       imagemagick
       ffmpeg
+      mpv
 
       # Games
       prismlauncher
@@ -112,6 +113,7 @@
       file
       fd
       ripgrep
+      yt-dlp
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
