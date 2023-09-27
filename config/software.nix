@@ -114,6 +114,7 @@
       fd
       ripgrep
       yt-dlp
+      zopfli
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
