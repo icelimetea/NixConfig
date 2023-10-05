@@ -106,7 +106,6 @@
       # Desktop apps & utilities
       monero-gui
       piper
-      gnome.gnome-tweaks
       alsa-utils
       libreoffice-fresh
       thunderbird
