@@ -168,8 +168,8 @@
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-unstable-small",
         "repo": "nixpkgs",
+        "rev": "e462c9172c685f0839baaa54bb5b49276a23dab7",
         "type": "github"
       }
     },
