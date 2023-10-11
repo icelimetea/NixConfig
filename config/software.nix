@@ -46,6 +46,7 @@
     
     git.enable = true;
     wireshark.enable = true;
+    kclock.enable = true;
   };
 
   environment = {
@@ -114,7 +115,6 @@
       ripgrep
       yt-dlp
       zopfli
-      kalarm
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
