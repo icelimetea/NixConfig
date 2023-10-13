@@ -115,6 +115,7 @@
       ripgrep
       yt-dlp
       zopfli
+      anki
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
