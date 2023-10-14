@@ -41,7 +41,7 @@
     java = {
       enable = true;
       
-      package = pkgs.jdk20;
+      package = pkgs.jdk21;
     };
     
     git.enable = true;
