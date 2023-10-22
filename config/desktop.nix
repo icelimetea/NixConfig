@@ -10,12 +10,12 @@
   };
 
   services = {
-    postgresql = {
-      enable = true;
-
-      settings.password_encryption = "scram-sha-256";
-      authentication = "host all lemontea localhost scram-sha-256";
-    };
+    # postgresql = {
+    #   enable = true;
+    # 
+    #   settings.password_encryption = "scram-sha-256";
+    #   authentication = "host all lemontea localhost scram-sha-256";
+    # };
 
     # rabbitmq.enable = true;
 
