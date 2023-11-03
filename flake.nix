@@ -20,18 +20,23 @@
         inherit nixpkgs;
         inherit home-manager;
       };
-    in configLib.mkConfig ([
+    in configLib.mkConfig {
+      systemModules = [
           lanzaboote.nixosModules.lanzaboote
           ./config/packages.nix
           ./config/desktop.nix
           ./config/software.nix
           ./config/misc.nix
-    ]) ({
-      "lime-pc" = {
-        stateVersion = "23.05";
-        systemKind = "x86_64-linux";
-        users = { "lemontea" = [ "wheel" ]; };
+      ];
+      hosts = {
+        "lime-pc" = {
+          stateVersion = "23.05";
+          systemKind = "x86_64-linux";
+        };
       };
-    });
+      users = {
+        "lemontea" = [ "wheel" ];
+      };
+    };
   };
 }

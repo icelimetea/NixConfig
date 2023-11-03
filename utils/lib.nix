@@ -47,8 +47,8 @@ let
                         definedCfg = import (configDir + "/per-user/${username}.nix") (cfgArgs // { injected = baseCfg; });
                       in nixpkgs.lib.attrsets.recursiveUpdate baseCfg definedCfg;
 in {
-  mkConfig = systemModules: hostCfgs:
+  mkConfig = { systemModules, hosts, users }:
     builtins.mapAttrs
-      (hostName: cfg: mkHostConfig (cfg // { inherit hostName systemModules; }))
-      hostCfgs;
+      (hostName: cfg: mkHostConfig (cfg // { inherit hostName systemModules users; }))
+      hosts;
 }
