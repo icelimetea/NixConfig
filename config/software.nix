@@ -58,6 +58,7 @@
       llvmPackages_latest.clang
       clang-tools
       gcc_latest
+      nodePackages_latest.nodejs
       gdb
       nasm
       rustup
