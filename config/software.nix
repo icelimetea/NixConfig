@@ -43,7 +43,8 @@
       
       package = pkgs.jdk21;
     };
-    
+
+    npm.enable = true;
     git.enable = true;
     wireshark.enable = true;
     kclock.enable = true;
