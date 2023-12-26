@@ -65,7 +65,7 @@
 
       # Development
       virtualenv
-      (emacsPackagesFor emacs).emacsWithPackages (epgks: [ epkgs.treesit-grammars.with-all-grammars ])
+      ((emacsPackagesFor emacs).emacsWithPackages (epgks: [ epkgs.treesit-grammars.with-all-grammars ]))
       jetbrains.idea-community
       jetbrains.pycharm-community
       maven
