@@ -20,7 +20,6 @@
     # rabbitmq.enable = true;
 
     upower.enable = true;
-    ratbagd.enable = true;
     geoclue2.enable = true;
 
     pipewire = {

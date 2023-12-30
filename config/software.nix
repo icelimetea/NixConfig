@@ -108,7 +108,6 @@
 
       # Desktop apps & utilities
       monero-gui
-      piper
       alsa-utils
       libreoffice-fresh
       thunderbird
@@ -117,6 +116,7 @@
       ripgrep
       yt-dlp
       zopfli
+      _7zz
       anki
     ];
 
