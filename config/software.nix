@@ -56,6 +56,7 @@
       python3Full
       llvmPackages_latest.llvm
       llvmPackages_latest.clang
+      llvmPackages_latest.lld
       clang-tools
       gcc_latest
       nodePackages_latest.nodejs
