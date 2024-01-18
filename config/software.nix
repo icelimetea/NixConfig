@@ -6,6 +6,7 @@
     "steam-runtime"
     "steam-run"
     "nvidia-x11"
+    "nvidia-settings"
   ];
 
   hardware = {
