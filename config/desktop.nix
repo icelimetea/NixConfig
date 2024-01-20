@@ -37,7 +37,11 @@
       layout = "us,ru";
       xkbOptions = "grp:caps_toggle";
 
-      displayManager.sddm.enable = true;
+      displayManager.sddm = {
+        enable = true;
+	theme = "maya";
+      };
+
       windowManager.dwm = {
         enable = true;
       };
