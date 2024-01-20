@@ -1,68 +1,6 @@
-{ config, pkgs, nixpkgs, ... }: rec {
-  hardware = {
-    pulseaudio.enable = false;
-
-    bluetooth = {
-      enable = true;
-
-      settings.General.Experimental = true;
-    };
-  };
-
-  services = {
-    # postgresql = {
-    #   enable = true;
-    # 
-    #   settings.password_encryption = "scram-sha-256";
-    #   authentication = "host all lemontea localhost scram-sha-256";
-    # };
-
-    # rabbitmq.enable = true;
-
-    upower.enable = true;
-    geoclue2.enable = true;
-
-    pipewire = {
-      enable = true;
-
-      alsa.enable = true;
-      pulse.enable = true;
-
-      wireplumber.enable = true;
-    };
-
-    xserver = {
-      enable = true;
-
-      layout = "us,ru";
-      xkbOptions = "grp:caps_toggle";
-
-      displayManager.sddm = {
-        enable = true;
-	theme = "elarun";
-      };
-
-      windowManager.dwm = {
-        enable = true;
-      };
-    };
-  };
-
-  programs.sway = {
-    enable = true;
-
-    extraOptions = [ "--unsupported-gpu" ];
-
-    extraPackages = with pkgs; [
-      swaylock
-      swayidle
-      sway-screen-size
-      rofi-wayland
-      alacritty
-    ];
-  };
-
-  environment.etc."/sway/config.d/sway.conf".text = ''
+{ config, pkgs, nixpkgs, ... }:
+let
+  swayConf = ''
     set $term alacritty
     set $menu "rofi -combi-modi window,run -show combi"
 
@@ -95,4 +33,56 @@
 
     bindsym $mod+p exec "swaylock -i $wallpaper"
   '';
+in rec {
+  hardware = {
+    pulseaudio.enable = false;
+
+    bluetooth = {
+      enable = true;
+
+      settings.General.Experimental = true;
+    };
+  };
+
+  services = {
+    upower.enable = true;
+    geoclue2.enable = true;
+
+    pipewire = {
+      enable = true;
+
+      alsa.enable = true;
+      pulse.enable = true;
+
+      wireplumber.enable = true;
+    };
+
+    xserver = {
+      enable = true;
+
+      layout = "us,ru";
+      xkbOptions = "grp:caps_toggle";
+
+      displayManager.sddm = {
+        enable = true;
+	theme = "elarun";
+      };
+    };
+  };
+
+  programs.sway = {
+    enable = true;
+
+    extraOptions = [ "--unsupported-gpu" ];
+
+    extraPackages = with pkgs; [
+      swaylock
+      swayidle
+      sway-screen-size
+      rofi-wayland
+      alacritty
+    ];
+  };
+
+  environment.etc."/sway/config.d/sway.conf".text = swayConf;
 }
