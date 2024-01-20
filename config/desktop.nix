@@ -39,7 +39,7 @@
 
       displayManager.sddm = {
         enable = true;
-	theme = "maya";
+	theme = "elarun";
       };
 
       windowManager.dwm = {
