@@ -33,12 +33,14 @@
 
     xserver = {
       enable = true;
-    
+
       layout = "us,ru";
       xkbOptions = "grp:caps_toggle";
 
       displayManager.sddm.enable = true;
-      desktopManager.plasma5.enable = true;
+      windowManager.dwm = {
+        enable = true;
+      };
     };
   };
 
@@ -58,15 +60,11 @@
 
   environment.etc."/sway/config.d/sway.conf".text = ''
     set $term alacritty
-
-    set $wallpaper /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1366x768.png
-    set $lockWallpaper ~/.lock-wallpaper
-
     set $menu "rofi -combi-modi window,run -show combi"
 
-    exec "easyeffects --gapplication-service"
+    set $wallpaper /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1366x768.png
 
-    exec_always "magick $wallpaper -resize $(sway-screen-size) -blur 0x10 $lockWallpaper"
+    exec "easyeffects --gapplication-service"
 
     default_border none
 
@@ -91,6 +89,6 @@
 
     output * bg $wallpaper fill #333333
 
-    bindsym $mod+p exec "swaylock -i $lockWallpaper"
+    bindsym $mod+p exec "swaylock -i $wallpaper"
   '';
 }
