@@ -47,7 +47,12 @@
     git.enable = true;
     wireshark.enable = true;
     kclock.enable = true;
-    steam.enable = true;
+
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+    };
+
     gamescope.enable = true;
   };
 
