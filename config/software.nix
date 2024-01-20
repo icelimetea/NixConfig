@@ -52,7 +52,6 @@
     kclock.enable = true;
     gamescope = {
       enable = true;
-      gamescopeSession.enable = true;
     };
   };
 
