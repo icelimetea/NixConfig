@@ -3,7 +3,6 @@
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam"
     "steam-original"
-    "steam-runtime"
     "steam-run"
     "nvidia-x11"
     "nvidia-settings"
@@ -36,13 +35,11 @@
   programs = {
     ssh = {
       startAgent = true;
-
       agentTimeout = "5m";
     };
 
     java = {
       enable = true;
-      
       package = pkgs.jdk21;
     };
 
@@ -50,6 +47,7 @@
     git.enable = true;
     wireshark.enable = true;
     kclock.enable = true;
+    steam.enable = true;
     gamescope.enable = true;
   };
 
@@ -91,8 +89,6 @@
 
       # Games
       prismlauncher
-      steam
-      steam.run
 
       # System administration
       virt-manager

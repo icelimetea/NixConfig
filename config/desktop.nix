@@ -45,6 +45,8 @@
   programs.sway = {
     enable = true;
 
+    extraOptions = [ "--unsupported-gpu" ];
+
     extraPackages = with pkgs; [
       swaylock
       swayidle
