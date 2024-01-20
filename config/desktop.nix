@@ -1,5 +1,8 @@
 { config, pkgs, nixpkgs, ... }:
 let
+  xkbLayout = "us,ru";
+  xkbOptions = "grp:caps_toggle";
+
   swayConf = ''
     set $term alacritty
     set $menu "rofi -combi-modi window,run -show combi"
@@ -17,8 +20,8 @@ let
     bindsym --no-warn $mod+Return exec $term
 
     input type:keyboard {
-      xkb_layout ${services.xserver.layout}
-      xkb_options ${services.xserver.xkbOptions}
+      xkb_layout ${xkbLayout}
+      xkb_options ${xkbOptions}
     }
 
     bar bar-0 {
@@ -33,7 +36,7 @@ let
 
     bindsym $mod+p exec "swaylock -i $wallpaper"
   '';
-in rec {
+in {
   hardware = {
     pulseaudio.enable = false;
 
@@ -60,8 +63,8 @@ in rec {
     xserver = {
       enable = true;
 
-      layout = "us,ru";
-      xkbOptions = "grp:caps_toggle";
+      layout = xkbLayout;
+      xkbOptions = xkbOptions;
 
       displayManager.sddm = {
         enable = true;
