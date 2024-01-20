@@ -50,9 +50,7 @@
     git.enable = true;
     wireshark.enable = true;
     kclock.enable = true;
-    gamescope = {
-      enable = true;
-    };
+    gamescope.enable = true;
   };
 
   environment = {
