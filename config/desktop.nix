@@ -10,8 +10,8 @@ let
     set $wallpaper /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1366x768.png
 
     exec swayidle -w \
-             timeout 300  swaylock -f -i $wallpaper \
-	     before-sleep swaylock -f -i $wallpaper
+             timeout 300  'swaylock -f -i $wallpaper' \
+	     before-sleep 'swaylock -f -i $wallpaper'
 
     exec "easyeffects --gapplication-service"
 
