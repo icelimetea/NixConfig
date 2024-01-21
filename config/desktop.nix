@@ -9,6 +9,10 @@ let
 
     set $wallpaper /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1366x768.png
 
+    exec swayidle -w \
+             timeout 300  swaylock -f -i $wallpaper \
+	     before-sleep swaylock -f -i $wallpaper
+
     exec "easyeffects --gapplication-service"
 
     default_border none
@@ -18,13 +22,14 @@ let
 
     bindsym --no-warn $mod+d exec $menu
     bindsym --no-warn $mod+Return exec $term
+    bindsym $mod+Shift+k kill
 
     input type:keyboard {
       xkb_layout ${xkbLayout}
       xkb_options ${xkbOptions}
     }
 
-    bar bar-0 {
+    bar {
       font "Cantarell Regular 15px"
 
       status_command while date +'%a, %-d %b %Y, %H:%M'; do sleep 1; done
