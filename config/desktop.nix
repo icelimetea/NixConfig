@@ -60,12 +60,12 @@ in {
 
       displayManager.sddm = {
         enable = true;
-	theme = "elarun";
+        theme = "elarun";
       };
 
       windowManager.dwm = {
         enable = true;
-	package = dwm.override { conf = dwmConf; };
+        package = pkgs.dwm.override { conf = dwmConf; };
       };
     };
   };
