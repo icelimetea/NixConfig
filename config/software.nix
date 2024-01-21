@@ -126,6 +126,7 @@
       anki
       alacritty
       rofi-wayland
+      feh
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
