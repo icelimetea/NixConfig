@@ -36,17 +36,9 @@ let
 
     bindsym $mod+p exec "swaylock -i $wallpaper"
   '';
+
+  dwmConf = ./dwm/config.h;
 in {
-  hardware = {
-    pulseaudio.enable = false;
-
-    bluetooth = {
-      enable = true;
-
-      settings.General.Experimental = true;
-    };
-  };
-
   services = {
     upower.enable = true;
     geoclue2.enable = true;
@@ -69,6 +61,11 @@ in {
       displayManager.sddm = {
         enable = true;
 	theme = "elarun";
+      };
+
+      windowManager.dwm = {
+        enable = true;
+	package = dwm.override { conf = dwmConf };
       };
     };
   };
