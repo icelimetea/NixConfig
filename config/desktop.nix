@@ -65,7 +65,7 @@ in {
 
       windowManager.dwm = {
         enable = true;
-	package = dwm.override { conf = dwmConf };
+	package = dwm.override { conf = dwmConf; };
       };
     };
   };
