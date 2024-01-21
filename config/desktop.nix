@@ -37,7 +37,7 @@ let
       colors background 00000070
     }
 
-    output * bg $wallpaper fill #333333
+    output * bg ${wallpaperPhoto} fill #333333
 
     bindsym $mod+p exec "swaylock -i ${wallpaperPhoto}"
   '';
