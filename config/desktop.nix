@@ -29,7 +29,7 @@ let
       xkb_options ${xkbOptions}
     }
 
-    bar {
+    bar bar-0 {
       font "Cantarell Regular 15px"
 
       status_command while date +'%a, %-d %b %Y, %H:%M'; do sleep 1; done
