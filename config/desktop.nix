@@ -22,7 +22,7 @@ let
 
     bindsym --no-warn $mod+d exec $menu
     bindsym --no-warn $mod+Return exec $term
-    bindsym $mod+Shift+k kill
+    bindsym $mod+Shift+w kill
 
     input type:keyboard {
       xkb_layout ${xkbLayout}
