@@ -79,8 +79,6 @@ in {
       swaylock
       swayidle
       sway-screen-size
-      rofi-wayland
-      alacritty
     ];
   };
 

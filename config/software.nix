@@ -124,6 +124,8 @@
       zopfli
       _7zz
       anki
+      alacritty
+      rofi-wayland
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
