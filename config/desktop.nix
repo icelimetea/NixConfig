@@ -1,5 +1,7 @@
 { config, pkgs, nixpkgs, ... }:
 let
+  wallpaperPhoto = "/run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1366x768.png";
+
   xkbLayout = "us,ru";
   xkbOptions = "grp:caps_toggle";
 
@@ -7,11 +9,9 @@ let
     set $term alacritty
     set $menu "rofi -combi-modi window,run -show combi"
 
-    set $wallpaper /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1366x768.png
-
     exec swayidle -w \
-             timeout 300  'swaylock -f -i $wallpaper' \
-	     before-sleep 'swaylock -f -i $wallpaper'
+             timeout 300  'swaylock -f -i ${wallpaperPhoto}' \
+	     before-sleep 'swaylock -f -i ${wallpaperPhoto}'
 
     exec "easyeffects --gapplication-service"
 
@@ -39,7 +39,7 @@ let
 
     output * bg $wallpaper fill #333333
 
-    bindsym $mod+p exec "swaylock -i $wallpaper"
+    bindsym $mod+p exec "swaylock -i ${wallpaperPhoto}"
   '';
 
   dwmConf = ./dwm/config.h;
@@ -63,9 +63,12 @@ in {
       layout = xkbLayout;
       xkbOptions = xkbOptions;
 
-      displayManager.sddm = {
-        enable = true;
-        theme = "elarun";
+      displayManager = {
+        sessionCommands = "feh --no-fehbg --bg-scale ${wallpaperPhoto} &";
+        sddm = {
+          enable = true;
+          theme = "elarun";
+        };
       };
 
       windowManager.dwm = {
