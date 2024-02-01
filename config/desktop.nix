@@ -29,6 +29,8 @@ let
       xkb_options ${xkbOptions}
     }
 
+    input type:touchpad tap enabled
+
     bar bar-0 {
       font "Cantarell Regular 15px"
 
