@@ -29,7 +29,10 @@ let
       xkb_options ${xkbOptions}
     }
 
-    input type:touchpad tap enabled
+    input type:touchpad {
+      tap enabled
+      dwt disabled
+    }
 
     bar bar-0 {
       font "Cantarell Regular 15px"
