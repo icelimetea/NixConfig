@@ -2,8 +2,10 @@
 let
   wallpaperPhoto = "/run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1366x768.png";
 
-  xkbLayout = "us,ru";
-  xkbOptions = "grp:caps_toggle";
+  xkbProps = {
+    layout = "us,ru";
+    options = "grp:caps_toggle";
+  };
 
   swayConf = ''
     set $term alacritty
@@ -25,8 +27,8 @@ let
     bindsym $mod+Shift+w kill
 
     input type:keyboard {
-      xkb_layout ${xkbLayout}
-      xkb_options ${xkbOptions}
+      xkb_layout ${xkbProps.layout}
+      xkb_options ${xkbProps.options}
     }
 
     input type:touchpad {
@@ -65,8 +67,7 @@ in {
     xserver = {
       enable = true;
 
-      layout = xkbLayout;
-      xkbOptions = xkbOptions;
+      xkb = xkbProps;
 
       displayManager = {
         sessionCommands = "feh --no-fehbg --bg-scale ${wallpaperPhoto} &";
