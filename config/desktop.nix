@@ -9,7 +9,7 @@ let
 
   swayConf = ''
     set $term alacritty
-    set $menu "rofi -combi-modi window,run -show combi"
+    set $menu "rofi -combi-modi window,run,drun -show combi"
 
     exec swayidle -w \
              timeout 300  'swaylock -f -i ${wallpaperPhoto}' \
