@@ -36,7 +36,7 @@ let
   mkDefaultUserCfg = systemConfig:
                      username:
                      stateVersion:
-                     cfgArgs:
+                     { pkgs, ... } @ cfgArgs:
                      let
                        baseCfg = {
                          home = {
