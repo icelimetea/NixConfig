@@ -92,7 +92,6 @@ in {
     extraPackages = with pkgs; [
       swaylock
       swayidle
-      sway-screen-size
     ];
   };
 

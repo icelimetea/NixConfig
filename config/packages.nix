@@ -1,7 +1,5 @@
 { nixpkgs, ... }: {
-  nixpkgs.overlays = [
-    (final: prev: { sway-screen-size = prev.callPackage ../packages/sway-screen-size {}; })
-  ];
+  nixpkgs.overlays = [];
 
   home-manager = {
     useGlobalPkgs = true;
