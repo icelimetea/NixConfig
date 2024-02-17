@@ -13,7 +13,7 @@ let
 
     exec swayidle -w \
              timeout 300  'swaylock -f -i ${wallpaperPhoto}' \
-	     before-sleep 'swaylock -f -i ${wallpaperPhoto}'
+             before-sleep 'swaylock -f -i ${wallpaperPhoto}'
 
     exec "easyeffects --gapplication-service"
 
