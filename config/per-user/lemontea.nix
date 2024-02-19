@@ -5,7 +5,9 @@
     userName = "icelimetea";
     userEmail = "fr3shtea@outlook.com";
   };
-  
+
+  home.file.".emacs".source = ./lemontea.el;
+
   programs.ssh = {
     enable = true;
 
