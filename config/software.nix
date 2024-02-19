@@ -51,7 +51,6 @@
       package = pkgs.jdk21;
     };
 
-    npm.enable = true;
     git.enable = true;
     wireshark.enable = true;
     steam.enable = true;
@@ -66,7 +65,6 @@
       llvmPackages_latest.lld
       clang-tools
       gcc_latest
-      nodePackages_latest.nodejs
       gdb
       nasm
       rustup
@@ -74,30 +72,23 @@
       # Development
       virtualenv
       ((emacsPackagesFor emacs).emacsWithPackages (epkgs: [ epkgs.treesit-grammars.with-all-grammars ]))
-      jetbrains.idea-community
-      jetbrains.pycharm-community
       maven
 
       # Browsers
       firefox-wayland
-      chromium
-
-      # Messaging apps
-      tdesktop
 
       # Media
       easyeffects
       obs-studio
       gimp
-      imagemagick
       ffmpeg
       mpv
 
       # Games
       prismlauncher
 
-      # System administration
-      virt-manager
+      # Utilities
+      alsa-utils
       smartmontools
       nvme-cli
       dmidecode
@@ -108,25 +99,24 @@
       libva-utils
       openssh
       openssl
-      wireshark
       wireguard-tools
       sbctl
-
-      # Desktop apps & utilities
-      monero-gui
-      alsa-utils
-      libreoffice-fresh
-      thunderbird
       file
       fd
       ripgrep
       yt-dlp
       zopfli
       _7zz
+      feh
+
+      # Desktop apps
+      virt-manager
+      libreoffice-fresh
+      thunderbird
       anki
       alacritty
       rofi-wayland
-      feh
+      wireshark
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
