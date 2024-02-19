@@ -63,7 +63,6 @@
       llvmPackages_latest.llvm
       llvmPackages_latest.clang
       llvmPackages_latest.lld
-      clang-tools
       gcc_latest
       gdb
       nasm
@@ -72,6 +71,8 @@
       # Development
       virtualenv
       ((emacsPackagesFor emacs).emacsWithPackages (epkgs: [ epkgs.treesit-grammars.with-all-grammars ]))
+      clang-tools
+      jdt-language-server
       maven
 
       # Browsers
