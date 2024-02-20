@@ -74,6 +74,7 @@
       clang-tools
       jdt-language-server
       maven
+      cmake
 
       # Browsers
       firefox-wayland
