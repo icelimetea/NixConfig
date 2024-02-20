@@ -75,6 +75,7 @@
       jdt-language-server
       maven
       cmake
+      make
 
       # Browsers
       firefox-wayland
