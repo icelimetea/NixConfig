@@ -149,5 +149,5 @@ in {
     ];
   };
 
-  environment.etc."/sway/config".text = swayConf;
+  environment.etc."sway/config".text = swayConf;
 }
