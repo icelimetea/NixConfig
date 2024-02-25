@@ -8,7 +8,7 @@ let
   };
 
   swayConf = ''
-    set $mod Mod1
+    set $mod Mod4
 
     set $left h
     set $down j
