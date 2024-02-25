@@ -90,12 +90,14 @@ let
     }
 
     bar {
+      position top;
+
       font "Cantarell Regular 15px"
 
       status_command while date +'%a, %-d %b %Y, %H:%M'; do sleep 1; done
 
       colors {
-        status_line #ffffff
+        status_text #ffffff
         background  #00000070
       }
     }
