@@ -78,7 +78,12 @@
     kresd = {
       enable = true;
 
-      extraConfig = "policy.add(policy.all(policy.TLS_FORWARD{{ '1.1.1.1', hostname = 'one.one.one.one' }}))";
+      extraConfig = ''
+        policy.add(policy.all(policy.TLS_FORWARD{
+          { '9.9.9.9', hostname = 'dns.quad9.net' },
+          { '1.1.1.1', hostname = 'one.one.one.one' }
+        }))
+      '';
     };
   };
 
