@@ -79,6 +79,7 @@
 
       # Browsers
       firefox-wayland
+      chromium
 
       # Media
       easyeffects
