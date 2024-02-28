@@ -18,6 +18,6 @@
 
   services.xserver.videoDrivers = [ "nouveau" ];
 
-  boot.initrd.luks.devices.vol1.device = "/dev/disk/by-uuid/fdac2ff7-7355-4c02-aefc-119d81e04aba";
-  boot.initrd.luks.devices.vol2.device = "/dev/disk/by-uuid/5f4d07d1-18ac-4b32-b049-602a8813a288";
+  boot.initrd.luks.devices.vol1.device = "/dev/disk/by-uuid/f7dc00c4-8dc8-43d7-bf92-9ea60aec5f84";
+  boot.initrd.luks.devices.vol2.device = "/dev/disk/by-uuid/50048bb3-3c3b-442a-9aee-9c9ff3755e76";
 }
