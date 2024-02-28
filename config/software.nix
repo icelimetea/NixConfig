@@ -4,6 +4,8 @@
     "steam"
     "steam-original"
     "steam-run"
+    "nvidia-x11"
+    "nvidia-settings"
   ];
 
   hardware = {
