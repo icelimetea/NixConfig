@@ -76,6 +76,7 @@
       maven
       cmake
       gnumake
+      jetbrains.idea-community
 
       # Browsers
       firefox-wayland
