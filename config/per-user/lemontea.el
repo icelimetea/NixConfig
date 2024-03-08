@@ -2,6 +2,9 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
 (use-package
   eglot
   :ensure t)
