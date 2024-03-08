@@ -8,6 +8,12 @@
 (use-package
   company
   :ensure t)
+(use-package
+  nix-mode
+  :ensure t)
+(use-package
+  lua-mode
+  :ensure t)
 
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
