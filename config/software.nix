@@ -67,6 +67,7 @@
       gdb
       nasm
       rustup
+      luajit
 
       # Development
       virtualenv
