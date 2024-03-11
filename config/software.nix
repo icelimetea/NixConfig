@@ -6,6 +6,7 @@
     "steam-run"
     "nvidia-x11"
     "nvidia-settings"
+    "osu-lazer"
   ];
 
   hardware = {
