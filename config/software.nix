@@ -93,6 +93,7 @@
 
       # Games
       prismlauncher
+      osu-lazer
 
       # Utilities
       alsa-utils
