@@ -136,7 +136,7 @@ in {
       };
     };
 
-    desktopManager,plasma6.enable = true;
+    desktopManager.plasma6.enable = true;
   };
 
   programs.sway = {
