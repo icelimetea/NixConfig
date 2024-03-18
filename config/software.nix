@@ -126,7 +126,6 @@
       alacritty
       rofi-wayland
       wireshark
-      telegram-desktop
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
