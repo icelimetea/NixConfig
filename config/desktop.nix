@@ -127,10 +127,7 @@ in {
 
       displayManager = {
         sessionCommands = "feh --no-fehbg --bg-scale ${wallpaperPhoto} &";
-        sddm = {
-          enable = true;
-          theme = "elarun";
-        };
+        sddm.enable = true;
       };
 
       windowManager.dwm = {
@@ -138,6 +135,8 @@ in {
         package = pkgs.dwm.override { conf = dwmConf; };
       };
     };
+
+    desktopManager,plasma6.enable = true;
   };
 
   programs.sway = {
