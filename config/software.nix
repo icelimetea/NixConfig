@@ -126,6 +126,7 @@
       alacritty
       rofi-wayland
       wireshark
+      tor-browser
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
