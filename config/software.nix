@@ -117,6 +117,7 @@
       zopfli
       _7zz
       feh
+      graphviz
 
       # Desktop apps
       virt-manager
