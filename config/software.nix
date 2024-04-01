@@ -128,6 +128,7 @@
       rofi-wayland
       wireshark
       tor-browser
+      telegram-desktop
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
