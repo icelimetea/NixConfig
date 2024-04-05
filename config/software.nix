@@ -69,6 +69,7 @@
       nasm
       rustup
       luajit
+      fpc
 
       # Development
       virtualenv
