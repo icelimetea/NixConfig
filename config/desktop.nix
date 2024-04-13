@@ -125,17 +125,15 @@ in {
 
       xkb = xkbProps;
 
+      displayManager.sessionCommands = "feh --no-fehbg --bg-scale ${wallpaperPhoto} &";
+
       windowManager.dwm = {
         enable = true;
         package = pkgs.dwm.override { conf = dwmConf; };
       };
     };
 
-    displayManager = {
-      sessionCommands = "feh --no-fehbg --bg-scale ${wallpaperPhoto} &";
-      sddm.enable = true;
-    };
-
+    displayManager.sddm.enable = true;
     desktopManager.plasma6.enable = true;
   };
 
