@@ -30,7 +30,7 @@
       ];
       hosts = {
         "lime-pc" = {
-          stateVersion = "23.05";
+          stateVersion = "24.05";
           systemKind = "x86_64-linux";
         };
       };
