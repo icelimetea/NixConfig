@@ -26,19 +26,6 @@
     };
   };
 
-  virtualisation = {
-    libvirtd = {
-      enable = true;
-
-      qemu = {
-        package = pkgs.qemu_kvm;
-
-        ovmf.enable = true;
-        swtpm.enable = true;
-      };
-    };
-  };
-
   programs = {
     ssh = {
       startAgent = true;
@@ -119,7 +106,6 @@
       graphviz
 
       # Desktop apps
-      virt-manager
       libreoffice-fresh
       thunderbird
       anki
