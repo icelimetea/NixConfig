@@ -1,8 +1,6 @@
 { nixpkgs, home-manager }:
 let
-  configDir = ../config;
-
-  mkHostConfig = { hostName, systemKind, users, systemModules, stateVersion }: nixpkgs.lib.nixosSystem {
+  mkHostConfig = { hostName, stateVersion, systemKind, systemConfig, systemModules, users }: nixpkgs.lib.nixosSystem {
     system = systemKind;
 
     modules = systemModules ++ [
@@ -19,22 +17,23 @@ let
         };
 
         users.users = builtins.mapAttrs
-                                (userName: userGroups: {
+                                (userName: userConfig: {
                                   isNormalUser = true;
-                                  extraGroups = userGroups;
+                                  extraGroups = userConfig.groups;
                                 })
                                 users;
 
         home-manager.users = builtins.mapAttrs
-                                        (userName: userGroups: mkDefaultUserCfg config userName stateVersion)
+                                        (userName: userConfig: mkDefaultUserCfg config userName userConfig.config stateVersion)
                                         users;
       })
-      (configDir + "/per-machine/${hostName}.nix")
+      systemConfig
     ];
   };
 
   mkDefaultUserCfg = systemConfig:
                      username:
+                     userConfig:
                      stateVersion:
                      { pkgs, ... } @ cfgArgs:
                      let
@@ -45,7 +44,7 @@ let
                            homeDirectory = systemConfig.users.users.${username}.home;
                          };
                        };
-                       definedCfg = import (configDir + "/per-user/${username}.nix") (cfgArgs // { injected = baseCfg; });
+                       definedCfg = import userConfig (cfgArgs // { injected = baseCfg; });
                      in nixpkgs.lib.attrsets.recursiveUpdate baseCfg definedCfg;
 in {
   mkConfig = { systemModules, hosts, users }:

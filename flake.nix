@@ -32,10 +32,14 @@
         "lime-pc" = {
           stateVersion = "24.05";
           systemKind = "x86_64-linux";
+          systemConfig = ./config/per-machine/lime-pc.nix;
         };
       };
       users = {
-        "lemontea" = [ "wheel" ];
+        "lemontea" = {
+           groups = [ "wheel" ];
+           config = ./config/per-user/lemontea.nix;
+        };
       };
     };
   };
