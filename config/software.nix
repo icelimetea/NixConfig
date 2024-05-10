@@ -74,7 +74,7 @@
       # Media
       easyeffects
       obs-studio
-      gimp
+      krita
       ffmpeg
       mpv
 
