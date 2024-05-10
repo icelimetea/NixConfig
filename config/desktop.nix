@@ -103,6 +103,8 @@ let
     }
 
     output * bg ${wallpaperPhoto} fill #333333
+
+    include @sysconfdir@/sway/config.d/*
   '';
 
   dwmConf = ./dwm/config.h;
