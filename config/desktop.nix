@@ -26,9 +26,6 @@ let
 
     default_border none
 
-    smart_gaps on
-    gaps inner 20
-
     bindsym $mod+d            exec $menu
     bindsym $mod+Return       exec $term
     bindsym $mod+Shift+w      kill
