@@ -16,6 +16,6 @@
     cpu.intel.updateMicrocode = true;
   };
 
-  boot.initrd.luks.devices.vol1.device = "/dev/disk/by-uuid/f7dc00c4-8dc8-43d7-bf92-9ea60aec5f84";
-  boot.initrd.luks.devices.vol2.device = "/dev/disk/by-uuid/50048bb3-3c3b-442a-9aee-9c9ff3755e76";
+  boot.initrd.luks.devices.vol1.device = "/dev/disk/by-uuid/cd3d2b00-5828-4f3a-8c43-229bc5b52c45";
+  boot.initrd.luks.devices.vol2.device = "/dev/disk/by-uuid/9918ad92-2996-47b9-b18e-849b4b71142b";
 }
