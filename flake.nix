@@ -6,7 +6,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/850f27322239f8cfa56b122cc9a278ab99a49015";
+      url = "github:nix-community/lanzaboote/v0.4.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
