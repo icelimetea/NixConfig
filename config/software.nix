@@ -80,7 +80,6 @@
       cmake
       gnumake
       jetbrains.idea-community
-      eclipses.eclipse-java
 
       # Browsers
       firefox-wayland
