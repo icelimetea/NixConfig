@@ -11,7 +11,7 @@
   boot.extraModulePackages = [ ];
 
   hardware = {
-    opengl.extraPackages = [ pkgs.intel-media-driver ];
+    graphics.extraPackages = [ pkgs.intel-media-driver ];
 
     cpu.intel.updateMicrocode = true;
   };
