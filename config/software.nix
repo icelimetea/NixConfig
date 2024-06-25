@@ -123,7 +123,7 @@
       rofi-wayland
       wireshark
       tor-browser
-      telegram-desktop
+      monero-gui
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
