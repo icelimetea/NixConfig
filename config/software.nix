@@ -4,7 +4,6 @@
     "steam"
     "steam-original"
     "steam-run"
-    "osu-lazer"
   ];
 
   hardware = {
@@ -89,7 +88,6 @@
 
       # Games
       prismlauncher
-      osu-lazer
 
       # Utilities
       alsa-utils
