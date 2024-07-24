@@ -1,11 +1,5 @@
 { pkgs, lib, nixpkgs, ... }:
 {
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "steam"
-    "steam-original"
-    "steam-run"
-  ];
-
   hardware = {
     graphics.enable = true;
 
@@ -17,21 +11,6 @@
       enable = true;
 
       settings.General.Experimental = true;
-    };
-  };
-
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu = {
-      package = pkgs.qemu_kvm;
-      swtpm.enable = true;
-      ovmf = {
-        enable = true;
-        packages = [(pkgs.OVMF.override {
-	  secureBoot = true;
-	  tpmSupport = true;
-        }).fd];
-      };
     };
   };
 
@@ -48,7 +27,6 @@
 
     git.enable = true;
     wireshark.enable = true;
-    steam.enable = true;
   };
 
   environment = {
@@ -62,8 +40,6 @@
       gdb
       nasm
       rustup
-      luajit
-      fpc
 
       # Development
       virtualenv
@@ -78,6 +54,7 @@
       # Browsers
       firefox-wayland
       chromium
+      tor-browser
 
       # Media
       easyeffects
@@ -107,20 +84,16 @@
       fd
       ripgrep
       yt-dlp
-      zopfli
       _7zz
       feh
       graphviz
-      virt-manager
 
       # Desktop apps
-      libreoffice-fresh
       thunderbird
       anki
       alacritty
       rofi-wayland
       wireshark
-      tor-browser
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
