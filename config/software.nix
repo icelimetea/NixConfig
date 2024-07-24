@@ -121,7 +121,6 @@
       rofi-wayland
       wireshark
       tor-browser
-      monero-gui
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
