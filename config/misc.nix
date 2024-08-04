@@ -44,6 +44,7 @@
       enable = true;
 
       dns = "none";
+      unmanaged = [ "type:wireguard" ];
 
       enableStrongSwan = true;
 
